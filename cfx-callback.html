@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FiveM koppelen… | Utrecht Roleplay</title>
+  <link rel="icon" href="assets/urp-logo.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: system-ui, sans-serif;
+      background: #070b12;
+      color: #f1f5f9;
+      padding: 1.5rem;
+    }
+    .box { max-width: 360px; text-align: center; }
+    p { color: rgba(255,255,255,0.5); font-size: 0.875rem; line-height: 1.5; }
+    .ok { color: #4ade80; font-weight: 700; }
+    .err { color: #fb7185; font-weight: 700; }
+    .manual {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.25);
+      text-align: left;
+    }
+    .manual label {
+      display: block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 0.5rem;
+    }
+    .manual input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.6rem 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(0,0,0,0.3);
+      color: #fff;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+    .manual button {
+      width: 100%;
+      padding: 0.65rem;
+      border: none;
+      border-radius: 0.5rem;
+      background: #3a8055;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    a { color: #4ade80; }
+  </style>
+</head>
+<body>
+  <div class="box" id="msg">
+    <p>FiveM-account koppelen…</p>
+    <p style="font-size:0.75rem">Dit venster sluit automatisch.</p>
+  </div>
+  <script src="js/config.js"></script>
+  <script src="js/cfx-auth.js"></script>
+  <script>
+    (function () {
+      const msg = document.getElementById('msg');
+      const ok = CfxAuth.handleCallback();
+      const user = CfxAuth.getStored();
+      const isLocal = CfxAuth.isLocalDev();
+
+      function notifyOpener() {
+        if (!window.opener || window.opener.closed) return;
+        try {
+          window.opener.postMessage(
+            { type: 'grp-cfx-linked', ok: !!ok, user: user || null },
+            window.location.origin
+          );
+        } catch (e) {}
+      }
+
+      function showManualFallback() {
+        msg.innerHTML = `
+          <p class="err">Geen FiveM-gegevens ontvangen</p>
+          <p>${
+            isLocal
+              ? 'Op <strong>localhost</strong> stuurt Tebex je account meestal niet terug. Vul je Cfx.re-gebruikersnaam in (rechtsboven in FiveM).'
+              : 'Probeer opnieuw of koppel handmatig met je Cfx.re-gebruikersnaam.'
+          }</p>
+          <div class="manual">
+            <label for="manual-name">Cfx.re gebruikersnaam</label>
+            <input type="text" id="manual-name" placeholder="bijv. JouwNaam" autocomplete="username">
+            <button type="button" id="manual-btn">Koppelen</button>
+          </div>
+          <p style="margin-top:1rem;font-size:0.75rem"><a href="index.html">Terug naar website</a></p>`;
+
+        document.getElementById('manual-btn')?.addEventListener('click', () => {
+          const name = document.getElementById('manual-name')?.value;
+          const result = CfxAuth.linkManual(name);
+          if (!result.ok) {
+            alert(result.error);
+            return;
+          }
+          notifyOpener();
+          msg.innerHTML = '<p class="ok">FiveM gekoppeld ✓</p><p>Venster sluit…</p>';
+          setTimeout(() => window.close(), 600);
+        });
+      }
+
+      notifyOpener();
+
+      if (window.opener && !window.opener.closed) {
+        if (ok && user) {
+          msg.innerHTML = '<p class="ok">FiveM gekoppeld ✓</p><p>Venster sluit…</p>';
+          setTimeout(() => window.close(), 600);
+        } else {
+          showManualFallback();
+        }
+        return;
+      }
+
+      if (ok) {
+        msg.innerHTML = '<p class="ok">FiveM gekoppeld ✓</p><p>Doorverwijzen…</p>';
+        const next = sessionStorage.getItem('grp_cfx_return_page') || 'index.html';
+        sessionStorage.removeItem('grp_cfx_return_page');
+        setTimeout(() => { window.location.href = next; }, 500);
+      } else {
+        showManualFallback();
+      }
+    })();
+  </script>
+</body>
+</html>

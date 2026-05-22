@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Utrecht Roleplay</title>
+  <link rel="icon" href="assets/urp-logo.png" type="image/png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body class="admin-body">
+  <div id="login-screen" class="admin-login">
+    <div class="admin-login-box">
+      <div class="admin-login-brand">
+        <img src="assets/urp-logo.png" alt="Utrecht Roleplay">
+        <h1>GRP Admin</h1>
+        <p class="admin-login-sub">Log in om de website te beheren</p>
+      </div>
+      <form id="login-form">
+        <div class="admin-field">
+          <label for="login-username">Gebruikersnaam</label>
+          <input type="text" id="login-username" placeholder="admin" required autocomplete="username">
+        </div>
+        <div class="admin-field">
+          <label for="login-password">Wachtwoord</label>
+          <input type="password" id="login-password" placeholder="••••••••" required autocomplete="current-password">
+        </div>
+        <p id="login-error" class="admin-error" hidden></p>
+        <button type="submit" class="btn-admin btn-admin-primary" style="width:100%;margin-top:0.75rem;padding:0.8rem">Inloggen</button>
+      </form>
+      <p class="admin-login-hint">Standaard: <code>admin</code> / <code>grp2026</code></p>
+      <a href="../index.html" class="admin-login-back">← Terug naar website</a>
+    </div>
+  </div>
+
+  <div id="admin-app" class="admin-layout" style="display:none">
+    <aside class="admin-sidebar">
+      <div class="logo">
+        <img src="assets/urp-logo.png" alt="">
+        URP <span>Admin</span>
+      </div>
+      <div class="admin-user-badge" id="current-user-badge">
+        <span class="admin-user-badge-text">
+          <span id="current-user-name">—</span>
+          <span class="admin-user-role" id="current-user-role"></span>
+        </span>
+      </div>
+      <p class="admin-nav-label">Menu</p>
+      <nav class="admin-nav">
+        <button type="button" data-panel="general" data-title="Algemeen" data-desc="Promo-banner, hero en sale-meldingen" class="active" data-nav-item>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Algemeen
+        </button>
+
+        <div class="admin-nav-group" data-nav-group="store">
+          <button type="button" class="admin-nav-group-toggle" aria-expanded="true">
+            <span>Store &amp; producten</span>
+            <svg class="admin-nav-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="admin-nav-sub">
+            <button type="button" data-panel="products" data-title="Producten overzicht" data-desc="Alle store-onderdelen" data-nav-item>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              Overzicht
+            </button>
+            <button type="button" data-panel="staff" data-title="Staff pakketten" data-desc="Homepage &amp; store" data-nav-item>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              Staff pakketten
+            </button>
+            <button type="button" data-panel="store-catalog" data-title="Webstore" data-desc="Categorieën &amp; producten links" data-nav-item>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="M3 9V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4"/></svg>
+              Webstore
+            </button>
+            <button type="button" data-panel="spin" data-title="Draai &amp; Win" data-desc="Cadeau-rad &amp; prijzen" data-nav-item>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/></svg>
+              Draai &amp; Win
+            </button>
+            <button type="button" data-panel="coins" data-title="Coins" data-desc="Coin-pakketten webshop" data-nav-item>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+              Coins (webshop)
+            </button>
+            <button type="button" data-panel="ingame" data-title="Ingame store" data-desc="FiveM /store sync" data-nav-item>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/></svg>
+              Ingame store
+            </button>
+            <button type="button" data-panel="wallets" data-title="Speler coins" data-desc="Saldi &amp; sync" data-nav-item>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              Speler coins
+            </button>
+          </div>
+        </div>
+
+        <button type="button" data-panel="rules" data-title="Regels (APV)" data-desc="Artikelen en regels op de regelspagina" data-nav-item>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          Regels
+        </button>
+        <button type="button" data-panel="users" data-title="Gebruikers" data-desc="Teamleden en permissies" data-nav-item>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Gebruikers
+        </button>
+        <button type="button" data-panel="settings" data-title="Instellingen" data-desc="Backup, import en wachtwoord" data-nav-item>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          Instellingen
+        </button>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <a href="../index.html" target="_blank" rel="noopener">Website bekijken ↗</a>
+        <button type="button" id="btn-logout">Uitloggen</button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <h1 id="admin-page-title">Algemeen</h1>
+          <p id="admin-page-desc">Promo-banner, hero en sale-meldingen</p>
+        </div>
+        <div class="admin-topbar-actions">
+          <a href="../index.html" target="_blank" rel="noopener">Live site ↗</a>
+        </div>
+      </header>
+
+      <div class="admin-content">
+        <section id="panel-general" class="admin-panel active">
+          <div class="admin-card">
+            <h3>Website content</h3>
+            <p class="admin-wallets-hint">Alle velden zijn verplicht — lege tekst wordt niet opgeslagen (voorkomt lege banners op de site).</p>
+            <div class="admin-field">
+              <label for="input-promo">Promo-banner (bovenaan elke pagina) <span class="admin-required">*</span></label>
+              <input type="text" id="input-promo" required maxlength="120" placeholder="bijv. 10% korting vanaf 20 coins!">
+            </div>
+            <div class="admin-field">
+              <label for="input-hero">Hero ondertitel (homepage) <span class="admin-required">*</span></label>
+              <textarea id="input-hero" rows="3" required maxlength="500" placeholder="Korte beschrijving onder de titel…"></textarea>
+            </div>
+            <div class="admin-row">
+              <div class="admin-field">
+                <label for="input-sale-title">Sale titel <span class="admin-required">*</span></label>
+                <input type="text" id="input-sale-title" required maxlength="80" placeholder="Sale actief!">
+              </div>
+              <div class="admin-field">
+                <label for="input-sale-text">Sale tekst <span class="admin-required">*</span></label>
+                <input type="text" id="input-sale-text" required maxlength="120" placeholder="Pak je korting…">
+              </div>
+            </div>
+            <p id="general-save-error" class="admin-inline-error" hidden></p>
+            <button type="button" id="btn-save-general" class="btn-admin btn-admin-primary">Opslaan</button>
+          </div>
+        </section>
+
+        <section id="panel-products" class="admin-panel">
+          <div class="admin-card">
+            <h3>Store &amp; ingame producten</h3>
+            <p class="admin-wallets-hint">Kies een onderdeel om te beheren. Wijzigingen in de ingame store syncen naar FiveM via de bridge API.</p>
+          </div>
+          <div class="admin-product-hub" id="admin-product-hub"></div>
+        </section>
+
+        <section id="panel-staff" class="admin-panel">
+          <div id="staff-list"></div>
+          <div class="admin-actions">
+            <button type="button" id="btn-add-staff" class="btn-admin btn-admin-secondary">+ Pakket toevoegen</button>
+            <button type="button" id="btn-save-staff" class="btn-admin btn-admin-primary">Opslaan</button>
+          </div>
+        </section>
+
+        <section id="panel-store-catalog" class="admin-panel">
+          <div id="store-catalog-overview">
+            <div class="admin-card">
+              <h3>Webstore categorieën (linkerkolom)</h3>
+              <p class="admin-wallets-hint">Voeg categorieën toe voor de store. Klik <strong>Bewerken</strong> om alle producten van die categorie te beheren.</p>
+              <div id="store-cat-list"></div>
+              <button type="button" id="btn-add-store-cat" class="btn-admin btn-admin-secondary">+ Categorie</button>
+            </div>
+            <div class="admin-card" style="margin-top:1rem">
+              <h3>Recent payments (sidebar)</h3>
+              <div id="store-recent-admin-list"></div>
+              <button type="button" id="btn-add-store-recent" class="btn-admin btn-admin-secondary">+ Regel</button>
+            </div>
+            <div class="admin-actions">
+              <button type="button" id="btn-save-store-catalog" class="btn-admin btn-admin-primary">Opslaan webstore</button>
+            </div>
+          </div>
+
+          <div id="store-catalog-products" class="store-cat-editor" hidden>
+            <div class="store-cat-editor-top">
+              <button type="button" id="btn-store-cat-back" class="btn-admin btn-admin-secondary btn-admin-sm">← Terug naar categorieën</button>
+              <div>
+                <h3 id="store-products-heading">Producten</h3>
+                <p id="store-products-sub" class="admin-wallets-hint" style="margin:0.25rem 0 0"></p>
+              </div>
+            </div>
+            <div class="admin-card" style="margin-top:1rem">
+              <div id="store-product-list"></div>
+              <button type="button" id="btn-add-store-product" class="btn-admin btn-admin-secondary">+ Product toevoegen</button>
+            </div>
+            <div class="admin-actions">
+              <button type="button" id="btn-save-store-catalog-products" class="btn-admin btn-admin-primary">Opslaan &amp; terug</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="panel-spin" class="admin-panel">
+          <div class="admin-card">
+            <h3>Draai &amp; Win (cadeau-knop)</h3>
+            <p class="admin-wallets-hint">Spelers klikken op het cadeau-icoon rechtsonder. Coins-prijzen worden toegevoegd aan hun saldo (login vereist).</p>
+            <div class="admin-field">
+              <label><input type="checkbox" id="spin-enabled" checked> Actief</label>
+            </div>
+            <div class="admin-row">
+              <div class="admin-field">
+                <label for="spin-title">Titel</label>
+                <input type="text" id="spin-title" maxlength="60" value="Draai &amp; Win!">
+              </div>
+              <div class="admin-field">
+                <label for="spin-cooldown">Cooldown (uren)</label>
+                <input type="number" id="spin-cooldown" min="1" max="168" value="24">
+              </div>
+            </div>
+            <div class="admin-field">
+              <label for="spin-subtitle">Ondertitel</label>
+              <input type="text" id="spin-subtitle" maxlength="120">
+            </div>
+            <div id="spin-prizes-list"></div>
+            <button type="button" id="btn-add-spin-prize" class="btn-admin btn-admin-secondary">+ Prijs</button>
+          </div>
+          <div class="admin-actions">
+            <button type="button" id="btn-save-spin" class="btn-admin btn-admin-primary">Opslaan Draai &amp; Win</button>
+          </div>
+        </section>
+
+        <section id="panel-coins" class="admin-panel">
+          <div id="coins-list"></div>
+          <div class="admin-actions">
+            <button type="button" id="btn-add-coin" class="btn-admin btn-admin-secondary">+ Coin toevoegen</button>
+            <button type="button" id="btn-save-coins" class="btn-admin btn-admin-primary">Opslaan</button>
+          </div>
+        </section>
+
+        <section id="panel-wallets" class="admin-panel">
+          <div class="admin-card">
+            <h3>Coins aan alle spelers</h3>
+            <p class="admin-wallets-hint">Spelers verschijnen hier zodra ze op de website zijn ingelogd met Discord én FiveM.</p>
+            <div class="admin-row admin-row--align-end">
+              <div class="admin-field" style="margin:0">
+                <label for="wallet-bulk-amount">Aantal coins</label>
+                <input type="number" id="wallet-bulk-amount" min="1" step="1" value="10" placeholder="10">
+              </div>
+              <button type="button" id="btn-wallet-bulk" class="btn-admin btn-admin-primary">+ Aan iedereen</button>
+            </div>
+          </div>
+          <div class="admin-field" style="margin-bottom:1rem">
+            <label for="wallet-search">Zoek speler</label>
+            <input type="text" id="wallet-search" placeholder="Discord, FiveM of saldo…">
+          </div>
+          <div id="wallets-list"></div>
+        </section>
+
+        <section id="panel-ingame" class="admin-panel admin-panel--ingame">
+          <div class="admin-card">
+            <h3>Ingame store ↔ FiveM</h3>
+            <p class="admin-wallets-hint">Wijzig producten en klik <strong>Opslaan &amp; sync</strong> (boven én onder de lijst). FiveM haalt de catalogus elke ~15 sec op. Voor voertuigen/wapens: vul <code>model</code> of <code>item</code> in.</p>
+          </div>
+          <div class="admin-ingame-toolbar">
+            <span class="admin-ingame-toolbar-hint">Wijzigingen zijn pas live na opslaan</span>
+            <div class="admin-ingame-toolbar-btns">
+              <button type="button" id="btn-add-ingame" class="btn-admin btn-admin-secondary">+ Product</button>
+              <button type="button" id="btn-save-ingame" class="btn-admin btn-admin-primary">Opslaan &amp; sync naar FiveM</button>
+            </div>
+          </div>
+          <div id="ingame-list"></div>
+          <div class="admin-ingame-toolbar admin-ingame-toolbar--bottom">
+            <span class="admin-ingame-toolbar-hint">Klaar met wijzigen?</span>
+            <div class="admin-ingame-toolbar-btns">
+              <button type="button" class="btn-admin btn-admin-secondary" data-ingame-add>+ Product</button>
+              <button type="button" class="btn-admin btn-admin-primary" data-ingame-save>Opslaan &amp; sync naar FiveM</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="panel-rules" class="admin-panel">
+          <div id="rules-list"></div>
+          <div class="admin-actions">
+            <button type="button" id="btn-add-article" class="btn-admin btn-admin-secondary">+ Artikel toevoegen</button>
+            <button type="button" id="btn-save-rules" class="btn-admin btn-admin-primary">Opslaan</button>
+          </div>
+        </section>
+
+        <section id="panel-users" class="admin-panel">
+          <div class="admin-card">
+            <h3>Nieuwe gebruiker</h3>
+            <div class="admin-row">
+              <div class="admin-field"><label for="new-username">Gebruikersnaam</label><input type="text" id="new-username" placeholder="bijv. jan"></div>
+              <div class="admin-field"><label for="new-displayname">Weergavenaam</label><input type="text" id="new-displayname" placeholder="Jan de Vries"></div>
+              <div class="admin-field"><label for="new-password">Wachtwoord</label><input type="password" id="new-password" placeholder="Min. 4 tekens"></div>
+            </div>
+            <div class="admin-field">
+              <label for="new-user-preset">Rol preset</label>
+              <select id="new-user-preset">
+                <option value="custom">Aangepast</option>
+                <option value="editor">Editor</option>
+                <option value="moderator">Moderator</option>
+                <option value="store">Store manager</option>
+                <option value="owner">Eigenaar (alles)</option>
+              </select>
+            </div>
+            <div class="admin-field">
+              <label>Toegang tot</label>
+              <label class="checkbox-field" style="margin-bottom:0.75rem">
+                <input type="checkbox" id="new-all-perms" data-prefix="new" data-all-perms>
+                Volledige toegang (eigenaar)
+              </label>
+              <div class="perm-grid" id="new-user-perms"></div>
+            </div>
+            <button type="button" id="btn-add-user" class="btn-admin btn-admin-primary">Gebruiker aanmaken</button>
+          </div>
+          <p class="admin-section-title">Bestaande gebruikers</p>
+          <div id="users-list"></div>
+        </section>
+
+        <section id="panel-settings" class="admin-panel">
+          <div class="admin-card">
+            <h3>Mijn wachtwoord</h3>
+            <div class="admin-field">
+              <label for="input-own-password">Nieuw wachtwoord</label>
+              <input type="password" id="input-own-password" placeholder="Min. 4 tekens">
+            </div>
+            <button type="button" id="btn-save-own-password" class="btn-admin btn-admin-primary">Wachtwoord wijzigen</button>
+          </div>
+          <div class="admin-card" data-require="settings">
+            <h3>Backup &amp; herstel</h3>
+            <button type="button" id="btn-export" class="btn-admin btn-admin-secondary">Export JSON</button>
+            <div class="admin-field" style="margin-top:1rem">
+              <label for="import-json">Import JSON</label>
+              <textarea id="import-json" rows="4" placeholder="Plak export hier..."></textarea>
+            </div>
+            <button type="button" id="btn-import" class="btn-admin btn-admin-secondary">Importeren</button>
+          </div>
+          <div class="admin-card admin-card--danger" data-require="settings">
+            <h3>Gevaarzone</h3>
+            <p style="font-size:0.8125rem;color:var(--admin-muted);margin-bottom:1rem">Zet alle content terug naar de originele standaardwaarden. Dit kan niet ongedaan worden gemaakt.</p>
+            <button type="button" id="btn-reset" class="btn-admin btn-admin-danger">Reset naar standaard</button>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div id="admin-toast" class="admin-toast" role="status" aria-live="polite"></div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/data.js"></script>
+  <script src="../js/content-data.js"></script>
+  <script src="../js/store-bridge.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
