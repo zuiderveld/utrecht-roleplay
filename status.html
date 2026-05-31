@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Status | Utrecht Roleplay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Live status van Utrecht Roleplay — FiveM server en websites.">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/status.css">
+</head>
+<body>
+
+<div class="bg-overlay"></div>
+
+<header class="topbar">
+    <div class="brand">
+        <img src="assets/images/logo.png" class="logo" alt="Utrecht Roleplay">
+        <span>Utrecht Roleplay</span>
+    </div>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="apv.html">APV</a>
+        <a href="status.html" class="active">Status</a>
+        <a href="https://docs.google.com/document/d/1kFd4n_rPeH0t8VGmxtSRE41VG021HTYaChUOb6KImCI/edit?tab=t.0" target="_blank" rel="noopener">WETBOEK</a>
+        <a href="index.html#join">Meedoen</a>
+    </nav>
+    <div class="nav-buttons">
+        <a href="https://discord.gg/rputrecht" class="btn-outline">Discord</a>
+        <a href="index.html#donate" class="btn-main">Doneren</a>
+    </div>
+</header>
+
+<main class="status-page">
+    <h1>Server <span style="color:#3b82f6">Status</span></h1>
+    <p class="subtitle">Live FiveM-spelers en bereikbaarheid van onze websites</p>
+
+    <div id="statusErr" class="status-err" role="alert"></div>
+    <div id="statusAlert"></div>
+
+    <div id="fivemHost"></div>
+
+    <p class="status-section-title">Websites</p>
+    <div id="sitesHost"><p class="fivem-meta">Laden…</p></div>
+
+    <p class="status-foot">Vernieuwt elke 60 seconden</p>
+</main>
+
+<footer class="footer">© 2026 Utrecht Roleplay — Alle rechten voorbehouden</footer>
+
+<script src="assets/js/status.js"></script>
+</body>
+</html>

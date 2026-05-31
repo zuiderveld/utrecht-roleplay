@@ -1,0 +1,289 @@
+/* URP Status — bij hoofdwebsite */
+.status-page {
+    padding: 100px 24px 60px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.status-page h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 0.35rem;
+}
+
+.status-page .subtitle {
+    text-align: center;
+    color: rgba(234, 240, 255, 0.65);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.status-alert {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    border-radius: 14px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.status-alert.operational { border-color: rgba(34, 197, 94, 0.35); background: rgba(34, 197, 94, 0.08); }
+.status-alert.outage { border-color: rgba(239, 68, 68, 0.4); background: rgba(239, 68, 68, 0.1); }
+.status-alert.degraded { border-color: rgba(234, 179, 8, 0.35); background: rgba(234, 179, 8, 0.08); }
+
+.status-alert-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.35rem;
+    background: #6b7280;
+}
+
+.status-alert.operational .status-alert-dot { background: #22c55e; box-shadow: 0 0 10px rgba(34, 197, 94, 0.6); }
+.status-alert.outage .status-alert-dot { background: #ef4444; }
+.status-alert.degraded .status-alert-dot { background: #eab308; }
+
+.status-alert strong { display: block; font-size: 1rem; }
+.status-alert span { font-size: 0.85rem; color: rgba(234, 240, 255, 0.65); }
+.status-alert time { display: block; font-size: 0.75rem; color: #6b7280; margin-top: 0.35rem; }
+
+/* FiveM kaart — referentie UI */
+.fivem-card {
+    background: #0b0e11;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 1.4rem 1.5rem 1.25rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.fivem-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.2rem;
+}
+
+.fivem-online {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #4ade80;
+}
+
+.fivem-online i { color: #4ade80; }
+
+.fivem-online-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.7);
+}
+
+.fivem-online.off { color: #f87171; }
+.fivem-online.off i { color: #f87171; }
+.fivem-online.off .fivem-online-dot { background: #f87171; box-shadow: none; }
+
+.fivem-signal {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 18px;
+}
+
+.fivem-signal span {
+    width: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.fivem-signal span:nth-child(1) { height: 5px; }
+.fivem-signal span:nth-child(2) { height: 8px; }
+.fivem-signal span:nth-child(3) { height: 11px; }
+.fivem-signal span:nth-child(4) { height: 14px; }
+.fivem-signal span:nth-child(5) { height: 18px; }
+.fivem-signal span.on { background: rgba(74, 222, 128, 0.55); }
+
+.fivem-count {
+    display: flex;
+    align-items: baseline;
+    gap: 0.1rem;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+
+.fivem-count .n { font-size: 3.5rem; font-weight: 800; color: #fff; }
+.fivem-count .sep { font-size: 2rem; color: rgba(255, 255, 255, 0.3); margin: 0 0.1rem; }
+.fivem-count .max { font-size: 2rem; font-weight: 600; color: #6b7280; }
+
+.fivem-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.88rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.fivem-bar {
+    height: 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.07);
+    overflow: hidden;
+}
+
+.fivem-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #15803d, #22c55e, #4ade80);
+    box-shadow: 0 0 12px rgba(74, 222, 128, 0.4);
+    transition: width 0.5s ease;
+    min-width: 0;
+}
+
+.fivem-scale {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    color: #6b7280;
+    margin-top: 0.4rem;
+}
+
+.fivem-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.fivem-connect {
+    padding: 12px 22px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #3b82f6, #93c5fd);
+    color: #0a0f1c;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.fivem-connect:hover { filter: brightness(1.08); }
+
+.fivem-meta { font-size: 0.78rem; color: #6b7280; }
+
+.fivem-players {
+    margin-top: 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.3);
+    max-height: 140px;
+    overflow-y: auto;
+}
+
+.fivem-players li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    list-style: none;
+}
+
+.fivem-players li span:last-child { color: #6b7280; font-size: 0.75rem; }
+
+.status-section-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+}
+
+.status-sites { display: flex; flex-direction: column; gap: 0.65rem; }
+
+.status-site {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.1rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s;
+}
+
+.status-site:hover { border-color: rgba(59, 130, 246, 0.45); }
+
+.status-site-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.status-site h3 { font-size: 0.95rem; margin-bottom: 0.15rem; }
+.status-site p { font-size: 0.8rem; color: #6b7280; }
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(107, 114, 128, 0.2);
+}
+
+.status-pill.up { background: rgba(34, 197, 94, 0.15); color: #86efac; }
+.status-pill.down { background: rgba(239, 68, 68, 0.15); color: #fca5a5; }
+
+.status-pill-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.status-foot {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.status-err {
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.status-err.show { display: block; }
+
+@media (max-width: 600px) {
+    .status-page { padding-top: 90px; }
+    .fivem-count .n { font-size: 2.75rem; }
+    .fivem-count .sep, .fivem-count .max { font-size: 1.6rem; }
+    .topbar { padding: 0 20px; }
+    .nav { display: none; }
+}
