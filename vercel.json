@@ -1,9 +1,25 @@
 {
+  "installCommand": "npm install",
   "buildCommand": null,
   "outputDirectory": ".",
   "functions": {
     "api/status.js": {
       "includeFiles": "data/**"
+    },
+    "api/discord-status.js": {
+      "includeFiles": "data/**"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/discord-status",
+      "destination": "/api/status?discord=1"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/discord-status",
+      "schedule": "*/5 * * * *"
+    }
+  ]
 }

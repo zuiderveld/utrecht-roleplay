@@ -1,219 +1,119 @@
-const fs = require('fs');
-const path = require('path');
+const { getFullStatus } = require('../server/lib/status-core');
+const { buildDiscordPayload } = require('../server/lib/discord-embed');
+const { upsertStatusMessage, parseWebhookUrl } = require('../server/lib/discord-webhook');
+const { snapshotFromStatus, loadPreviousState, savePreviousState } = require('../server/lib/status-state');
+const { sendTransitionAlerts } = require('../server/lib/discord-alerts');
 
-const CHECK_TIMEOUT_MS = 15000;
-
-/** Fallback als data/ niet op Vercel zit (alleen api/ geüpload) */
-const DEFAULT_SITES = {
-  sites: [
-    {
-      id: 'main',
-      name: 'Hoofdwebsite',
-      description: 'Utrecht Roleplay',
-      url: 'https://www.utrechtroleplay.eu',
-      checkPath: '/',
-      link: 'https://www.utrechtroleplay.eu',
-      icon: 'globe',
-    },
-    {
-      id: 'overheid',
-      name: 'Overheid portaal',
-      description: 'Politie, KMar, Ambulance, Pechhulp',
-      url: 'https://overheid.utrechtroleplay.eu',
-      checkPath: '/api/maintenance',
-      fallbackPath: '/',
-      link: 'https://overheid.utrechtroleplay.eu/',
-      icon: 'landmark',
-    },
-    {
-      id: 'staff',
-      name: 'Staff portaal',
-      description: 'Staff dashboard',
-      url: 'https://staff.utrechtroleplay.eu',
-      checkPath: '/api/site-data',
-      fallbackPath: '/',
-      link: 'https://staff.utrechtroleplay.eu/',
-      icon: 'shield',
-    },
-  ],
-};
-
-const DEFAULT_FIVEM = {
-  enabled: true,
-  host: '45.116.104.215',
-  port: 30120,
-  name: 'FiveM server',
-};
-
-function readJson(relPath, fallback) {
-  const candidates = [
-    path.join(process.cwd(), relPath),
-    path.join(__dirname, '..', relPath),
-  ];
-  for (const filePath of candidates) {
-    try {
-      return JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    } catch {
-      /* volgende pad */
-    }
-  }
-  return fallback;
+function cors(res, discord) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    discord ? 'GET, POST, OPTIONS' : 'GET, OPTIONS'
+  );
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  if (!discord) res.setHeader('Cache-Control', 'no-store, max-age=0');
 }
 
-function loadSites() {
-  const raw = readJson('data/status-sites.json', DEFAULT_SITES);
-  const sites = Array.isArray(raw.sites) ? raw.sites : DEFAULT_SITES.sites;
-  return sites.map((site) => {
-    const key = `STATUS_URL_${(site.id || '').toUpperCase().replace(/-/g, '_')}`;
-    const override = process.env[key];
-    if (override) return { ...site, url: override.replace(/\/$/, '') };
-    return site;
-  });
+function isAuthorized(req) {
+  const secret = process.env.CRON_SECRET || process.env.DISCORD_STATUS_SECRET;
+  if (!secret) return true;
+
+  const auth = req.headers.authorization || '';
+  if (auth === `Bearer ${secret}`) return true;
+
+  const q = req.query?.secret;
+  if (q && q === secret) return true;
+
+  return false;
 }
 
-function loadFivemConfig() {
-  const file = readJson('data/fivem.json', DEFAULT_FIVEM);
-  const enabled = process.env.FIVEM_ENABLED !== 'false' && file.enabled !== false;
-  const host = (process.env.FIVEM_HOST || file.host || '').trim();
-  const port = Number(process.env.FIVEM_PORT || file.port || 30120);
-  return {
-    enabled: enabled && !!host,
-    host,
-    port: Number.isFinite(port) ? port : 30120,
-    name: file.name || 'FiveM server',
-  };
-}
-
-async function probeUrl(fullUrl) {
-  const started = Date.now();
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), CHECK_TIMEOUT_MS);
-  try {
-    const res = await fetch(fullUrl, {
-      method: 'GET',
-      redirect: 'follow',
-      signal: controller.signal,
-      headers: { Accept: 'application/json, text/html;q=0.9' },
+async function handleDiscord(req, res) {
+  if (!isAuthorized(req)) {
+    return res.status(401).json({
+      error: 'Unauthorized — gebruik ?secret=JOUW_CRON_SECRET',
     });
-    clearTimeout(timer);
-    const latencyMs = Date.now() - started;
-    let body = null;
-    const up = res.status >= 200 && res.status < 400;
-    if (up) {
-      try {
-        const text = await res.text();
-        if (text) body = JSON.parse(text);
-      } catch {
-        body = null;
-      }
-    }
-    return { up, latencyMs, httpStatus: res.status, body, error: null };
-  } catch (err) {
-    clearTimeout(timer);
-    return {
-      up: false,
-      latencyMs: Date.now() - started,
-      httpStatus: 0,
-      body: null,
-      error: err.name === 'AbortError' ? 'Timeout' : err.message || 'Onbereikbaar',
+  }
+
+  const webhookUrl = process.env.DISCORD_STATUS_WEBHOOK_URL;
+  if (!webhookUrl) {
+    return res.status(500).json({
+      error: 'DISCORD_STATUS_WEBHOOK_URL ontbreekt in Vercel Environment Variables',
+    });
+  }
+
+  if (!parseWebhookUrl(webhookUrl)) {
+    return res.status(500).json({
+      error: 'DISCORD_STATUS_WEBHOOK_URL is ongeldig. Kopieer de webhook-URL opnieuw uit Discord.',
+    });
+  }
+
+  try {
+    const previous = await loadPreviousState();
+    const status = await getFullStatus();
+    const current = snapshotFromStatus(status);
+
+    const alertResult = await sendTransitionAlerts(webhookUrl, previous, current, status);
+
+    const payload = buildDiscordPayload(status);
+    const messageId = process.env.DISCORD_STATUS_MESSAGE_ID || null;
+    const message = await upsertStatusMessage(webhookUrl, messageId, payload);
+
+    await savePreviousState(current);
+
+    const response = {
+      ok: true,
+      mode: messageId ? 'updated' : 'created',
+      messageId: message.id,
+      channelId: message.channel_id,
+      overall: status.overall,
+      checkedAt: status.checkedAt,
+      alertsSent: alertResult.sent,
+      alerts: alertResult.alerts,
+      stateStored: !!process.env.BLOB_READ_WRITE_TOKEN || 'local-only',
     };
-  }
-}
 
-async function checkSite(site) {
-  const base = (site.url || '').replace(/\/$/, '');
-  if (!base) {
-    return { ...site, id: site.id, name: site.name, status: 'unknown', error: 'Geen URL' };
-  }
-  const paths = [site.checkPath, site.fallbackPath].filter(Boolean);
-  let last = null;
-  let usedPath = '/';
-  for (const p of paths) {
-    usedPath = p.startsWith('/') ? p : `/${p}`;
-    last = await probeUrl(base + usedPath);
-    if (last.up) break;
-  }
-  const maintenance =
-    site.id === 'overheid' && last?.body && typeof last.body.global === 'boolean'
-      ? { global: !!last.body.global, diensten: last.body.diensten || null }
-      : null;
-  return {
-    id: site.id,
-    name: site.name,
-    description: site.description || '',
-    link: site.link || base,
-    icon: site.icon || 'globe',
-    status: last.up ? 'up' : 'down',
-    latencyMs: last.latencyMs,
-    error: last.up ? null : last.error || `HTTP ${last.httpStatus}`,
-    maintenance,
-  };
-}
+    if (!messageId) {
+      response.hint =
+        'Zet DISCORD_STATUS_MESSAGE_ID=' +
+        message.id +
+        ' in Vercel (redeploy) zodat hetzelfde embed-bericht wordt bijgewerkt.';
+    }
 
-async function checkFivem(cfg) {
-  if (!cfg.enabled) return { enabled: false };
-  const base = `http://${cfg.host}:${cfg.port}`;
-  const [dynamicRes, playersRes] = await Promise.all([
-    probeUrl(`${base}/dynamic.json`),
-    probeUrl(`${base}/players.json`),
-  ]);
-  const up = dynamicRes.up && dynamicRes.body;
-  const dynamic = dynamicRes.body || {};
-  const maxClients = parseInt(dynamic.sv_maxclients, 10) || 128;
-  const clients = Number(dynamic.clients) || 0;
-  let players = [];
-  if (playersRes.up && Array.isArray(playersRes.body)) {
-    players = playersRes.body
-      .map((p) => ({ name: (p.name || 'Speler').trim(), ping: p.ping }))
-      .filter((p) => p.name);
+    if (!previous) {
+      response.note =
+        'Eerste run: geen offline-meldingen. Vanaf de volgende check krijg je een alert bij uitval.';
+    }
+
+    if (!process.env.BLOB_READ_WRITE_TOKEN) {
+      response.warning =
+        'Zonder BLOB_READ_WRITE_TOKEN onthoudt Vercel geen vorige status — zet Blob aan voor offline-alerts.';
+    }
+
+    return res.status(200).json(response);
+  } catch (err) {
+    console.error('discord-status:', err);
+    return res.status(500).json({ error: err.message || 'Discord update mislukt' });
   }
-  return {
-    enabled: true,
-    status: up ? 'up' : 'down',
-    name: cfg.name,
-    latencyMs: Math.max(dynamicRes.latencyMs || 0, playersRes.latencyMs || 0),
-    host: cfg.host,
-    port: cfg.port,
-    connectUrl: `fivem://connect/${cfg.host}:${cfg.port}`,
-    error: up ? null : dynamicRes.error || 'Offline',
-    hostname: dynamic.hostname || 'Utrecht Roleplay',
-    clients,
-    maxClients,
-    mapname: dynamic.mapname || null,
-    players,
-  };
-}
-
-function summarize(sites, fivem) {
-  const down = sites.filter((s) => s.status === 'down').length;
-  if (down > 0) return 'outage';
-  if (fivem?.enabled && fivem.status === 'down') return 'degraded';
-  return 'operational';
-}
-
-async function getFullStatus() {
-  const [sites, fivem] = await Promise.all([
-    Promise.all(loadSites().map(checkSite)),
-    checkFivem(loadFivemConfig()),
-  ]);
-  const fivemOut = fivem.enabled ? fivem : null;
-  return {
-    overall: summarize(sites, fivem),
-    checkedAt: new Date().toISOString(),
-    sites,
-    fivem: fivemOut,
-    meta: {
-      sitesConfigured: sites.length,
-      fivemConfigured: !!fivem.enabled,
-    },
-  };
 }
 
 module.exports = async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Cache-Control', 'no-store');
+  const discord =
+    req.query?.discord === '1' ||
+    req.query?.discord === 'true' ||
+    req.query?.postDiscord === '1';
+
+  cors(res, discord);
   if (req.method === 'OPTIONS') return res.status(200).end();
+
+  if (discord) {
+    if (req.method !== 'GET' && req.method !== 'POST') {
+      return res.status(405).json({ error: 'Alleen GET of POST' });
+    }
+    return handleDiscord(req, res);
+  }
+
   if (req.method !== 'GET') return res.status(405).json({ error: 'Alleen GET' });
+
   try {
     return res.status(200).json(await getFullStatus());
   } catch (err) {

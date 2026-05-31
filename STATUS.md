@@ -35,6 +35,6 @@ In `data/status-sites.json` → staff `url` naar je echte staff-domein (bijv. `*
 
 Optioneel in Vercel: `STATUS_URL_STAFF`, `FIVEM_HOST`, `FIVEM_PORT`.
 
-## Discord (optioneel later)
+## Discord status-bericht
 
-Discord webhook kan later apart; focus nu op website status.
+Zie **`DISCORD.md`**: webhook in Vercel, één keer `/api/discord-status?secret=...`, daarna `DISCORD_STATUS_MESSAGE_ID`. Cron elke 5 min.
