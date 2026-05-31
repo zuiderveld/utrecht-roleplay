@@ -152,25 +152,16 @@ async function checkSite(site) {
 async function checkFivem(cfg) {
   if (!cfg.enabled) return { enabled: false };
   const base = `http://${cfg.host}:${cfg.port}`;
-  const [dynamicRes, playersRes] = await Promise.all([
-    probeUrl(`${base}/dynamic.json`),
-    probeUrl(`${base}/players.json`),
-  ]);
+  const dynamicRes = await probeUrl(`${base}/dynamic.json`);
   const up = dynamicRes.up && dynamicRes.body;
   const dynamic = dynamicRes.body || {};
   const maxClients = parseInt(dynamic.sv_maxclients, 10) || 128;
   const clients = Number(dynamic.clients) || 0;
-  let players = [];
-  if (playersRes.up && Array.isArray(playersRes.body)) {
-    players = playersRes.body
-      .map((p) => ({ name: (p.name || 'Speler').trim(), ping: p.ping }))
-      .filter((p) => p.name);
-  }
   return {
     enabled: true,
     status: up ? 'up' : 'down',
     name: cfg.name,
-    latencyMs: Math.max(dynamicRes.latencyMs || 0, playersRes.latencyMs || 0),
+    latencyMs: dynamicRes.latencyMs || 0,
     host: cfg.host,
     port: cfg.port,
     connectUrl: `fivem://connect/${cfg.host}:${cfg.port}`,
@@ -179,7 +170,6 @@ async function checkFivem(cfg) {
     clients,
     maxClients,
     mapname: dynamic.mapname || null,
-    players,
   };
 }
 
@@ -202,6 +192,8 @@ async function getFullStatus() {
     sites,
     fivem: fivemOut,
     meta: {
+      apiVersion: 3,
+      discordReady: true,
       sitesConfigured: sites.length,
       fivemConfigured: !!fivem.enabled,
     },

@@ -1,0 +1,19 @@
+GEEN messageId? → OUDE api/status.js staat nog op Vercel.
+
+Upload ALLEEN dit bestand is NIET genoeg (server/lib mist dan).
+Upload deze bestanden naar GitHub en REDEPLOY:
+
+  api/status.js
+  api/discord-status.js
+  server/lib/  (hele map, 6 bestanden)
+  vercel.json
+  package.json
+
+Test na deploy:
+  https://www.utrechtroleplay.eu/api/status
+  → in JSON moet staan: "apiVersion": 3
+
+  https://www.utrechtroleplay.eu/api/status?discord=1&secret=utrecht_roleplay
+  → moet zijn: "ok": true, "messageId": "..."
+
+Zonder apiVersion 3 = oude code, Discord werkt niet.

@@ -83,19 +83,6 @@ function fivemEmbed(fivem) {
   if (fivem.hostname) meta.push(`**${fivem.hostname}**`);
   if (fivem.mapname) meta.push(`Map: ${fivem.mapname}`);
 
-  let playerLines = '';
-  if (fivem.players?.length) {
-    playerLines = fivem.players
-      .slice(0, 12)
-      .map((p) => `• ${p.name}${p.ping != null ? ` · ${p.ping}ms` : ''}`)
-      .join('\n');
-    if (fivem.clients > fivem.players.length) {
-      playerLines += `\n_+${fivem.clients - fivem.players.length} overige_`;
-    }
-  } else if (clients === 0) {
-    playerLines = '_Geen spelers online_';
-  }
-
   const embed = {
     title: '🎮 FiveM server',
     color: COLORS.operational,
@@ -115,16 +102,6 @@ function fivemEmbed(fivem) {
       .filter((line) => line !== null && line !== '')
       .join('\n'),
   };
-
-  if (playerLines) {
-    embed.fields = [
-      {
-        name: 'Spelers in de stad',
-        value: playerLines.slice(0, 1020),
-        inline: false,
-      },
-    ];
-  }
 
   return embed;
 }

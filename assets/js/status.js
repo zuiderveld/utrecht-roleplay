@@ -51,21 +51,6 @@
         var fill = 'width:' + pct + '%';
         if (c > 0 && pct < 2) fill += ';min-width:8px';
 
-        var players = '';
-        if (f.players && f.players.length) {
-            players = '<ul class="fivem-players">';
-            for (var i = 0; i < f.players.length && i < 20; i++) {
-                var p = f.players[i];
-                players +=
-                    '<li><span>' +
-                    esc(p.name) +
-                    '</span><span>' +
-                    (p.ping != null ? p.ping + ' ms' : '') +
-                    '</span></li>';
-            }
-            players += '</ul>';
-        }
-
         return (
             '<div class="fivem-card">' +
             '<div class="fivem-card-top">' +
@@ -102,7 +87,6 @@
             ' · ' +
             ms(f.latencyMs) +
             '</span></div>' +
-            players +
             '</div>'
         );
     }

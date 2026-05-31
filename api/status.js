@@ -62,6 +62,7 @@ async function handleDiscord(req, res) {
 
     const response = {
       ok: true,
+      apiVersion: 3,
       mode: messageId ? 'updated' : 'created',
       messageId: message.id,
       channelId: message.channel_id,
@@ -84,11 +85,6 @@ async function handleDiscord(req, res) {
         'Eerste run: geen offline-meldingen. Vanaf de volgende check krijg je een alert bij uitval.';
     }
 
-    if (!process.env.BLOB_READ_WRITE_TOKEN) {
-      response.warning =
-        'Zonder BLOB_READ_WRITE_TOKEN onthoudt Vercel geen vorige status — zet Blob aan voor offline-alerts.';
-    }
-
     return res.status(200).json(response);
   } catch (err) {
     console.error('discord-status:', err);
@@ -97,10 +93,12 @@ async function handleDiscord(req, res) {
 }
 
 module.exports = async function handler(req, res) {
+  const reqUrl = req.url || '';
   const discord =
     req.query?.discord === '1' ||
     req.query?.discord === 'true' ||
-    req.query?.postDiscord === '1';
+    req.query?.postDiscord === '1' ||
+    reqUrl.includes('discord=1');
 
   cors(res, discord);
   if (req.method === 'OPTIONS') return res.status(200).end();
@@ -115,7 +113,9 @@ module.exports = async function handler(req, res) {
   if (req.method !== 'GET') return res.status(405).json({ error: 'Alleen GET' });
 
   try {
-    return res.status(200).json(await getFullStatus());
+    const data = await getFullStatus();
+    data.meta = { ...data.meta, apiVersion: 3, discordReady: true };
+    return res.status(200).json(data);
   } catch (err) {
     return res.status(500).json({ error: err.message || 'Status check mislukt' });
   }
