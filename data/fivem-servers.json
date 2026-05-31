@@ -1,0 +1,15 @@
+{
+  "servers": [
+    {
+      "id": "utrecht",
+      "name": "Utrecht Roleplay",
+      "description": "Professionele Nederlandse FiveM roleplay — realisme, structuur en kwaliteit.",
+      "host": "45.116.104.215",
+      "port": 30120,
+      "tags": ["roleplay", "nl", "esx", "realism"],
+      "locale": "nl",
+      "logo": "assets/images/logo.png",
+      "featured": true
+    }
+  ]
+}

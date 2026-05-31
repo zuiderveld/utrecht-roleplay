@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Servers | Utrecht Roleplay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vind en join Utrecht Roleplay — FiveM server list.">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/servers.css">
+</head>
+<body>
+
+<div class="bg-overlay"></div>
+
+<header class="topbar">
+    <div class="brand">
+        <img src="assets/images/logo.png" class="logo" alt="Utrecht Roleplay">
+        <span>Utrecht Roleplay</span>
+    </div>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="servers.html" class="active">Servers</a>
+        <a href="status.html">Status</a>
+        <a href="apv.html">APV</a>
+        <a href="https://docs.google.com/document/d/1qfrcfnsyI-__ufqnPlb56kWgw-W60IqPYoCM7Wxf-Zw/edit?tab=t.0" target="_blank" rel="noopener">WETBOEK</a>
+        <a href="index.html#join">Meedoen</a>
+    </nav>
+    <div class="nav-buttons">
+        <a href="https://discord.gg/rputrecht" class="btn-outline">Discord</a>
+        <a href="index.html#donate" class="btn-main">Doneren</a>
+    </div>
+</header>
+
+<main class="servers-page">
+    <div class="cfx-layout">
+        <aside class="cfx-sidebar">
+            <h2>Zoeken</h2>
+            <div class="cfx-search-wrap">
+                <i class="fas fa-search"></i>
+                <input type="search" id="serverSearch" class="cfx-search" placeholder="Zoek servers…" autocomplete="off">
+            </div>
+
+            <h2>Filters</h2>
+            <div class="cfx-filter-group">
+                <label><input type="checkbox" class="cfx-filter-tag" value="roleplay" checked> Roleplay</label>
+                <label><input type="checkbox" class="cfx-filter-tag" value="nl" checked> Nederlands</label>
+                <label><input type="checkbox" class="cfx-filter-tag" value="esx"> ESX</label>
+                <label><input type="checkbox" class="cfx-filter-tag" value="realism"> Realism</label>
+            </div>
+            <div class="cfx-filter-group">
+                <label><input type="checkbox" id="hideEmpty"> Verberg lege servers</label>
+            </div>
+
+            <p class="cfx-sidebar-note">
+                Layout geïnspireerd op de
+                <a href="https://servers.fivem.net/" target="_blank" rel="noopener">officiële FiveM serverlijst</a>.
+                Hier zie je onze URP-server met live spelers.
+            </p>
+        </aside>
+
+        <section class="cfx-main">
+            <div class="cfx-main-header">
+                <div>
+                    <h1><span>Cfx.re</span> style — Servers</h1>
+                    <p id="livePing">Live laden…</p>
+                </div>
+                <p id="serverCount">—</p>
+            </div>
+            <div id="serverList" class="cfx-server-list">
+                <div class="cfx-empty"><i class="fas fa-spinner fa-spin"></i> Servers laden…</div>
+            </div>
+            <p class="cfx-powered">
+                Utrecht Roleplay · <a href="https://www.cfx.re/" target="_blank" rel="noopener">Cfx.re</a> / FiveM
+            </p>
+        </section>
+    </div>
+</main>
+
+<footer class="footer">© 2026 Utrecht Roleplay — Alle rechten voorbehouden</footer>
+
+<script src="assets/js/servers.js?v=2"></script>
+</body>
+</html>

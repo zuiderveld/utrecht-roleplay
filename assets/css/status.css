@@ -233,6 +233,7 @@
 
 .status-pill.up { background: rgba(34, 197, 94, 0.15); color: #86efac; }
 .status-pill.down { background: rgba(239, 68, 68, 0.15); color: #fca5a5; }
+.status-pill.maint { background: rgba(234, 179, 8, 0.15); color: #fde047; }
 
 .status-pill-dot {
     width: 6px;

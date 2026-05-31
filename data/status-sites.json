@@ -24,7 +24,7 @@
       "name": "Staff portaal",
       "description": "Staff dashboard",
       "url": "https://staff.utrechtroleplay.eu",
-      "checkPath": "/api/site-data",
+      "checkPath": "/api/maintenance",
       "fallbackPath": "/",
       "link": "https://staff.utrechtroleplay.eu/",
       "icon": "shield"

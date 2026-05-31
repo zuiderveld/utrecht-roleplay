@@ -35,14 +35,17 @@ function formatNlTime(iso) {
 
 function siteField(site) {
   const icon = SITE_ICONS[site.id] || '📄';
+  const maint = site.status === 'maintenance' || site.maintenance?.global;
   const up = site.status === 'up';
-  const statusLine = up
-    ? `✅ **Online**${site.latencyMs != null ? ` · ${Math.round(site.latencyMs)}ms` : ''}`
-    : `❌ **Offline**${site.error ? `\n${site.error}` : ''}`;
+  const statusLine = maint
+    ? `🟡 **Onderhoud**${site.latencyMs != null ? ` · ${Math.round(site.latencyMs)}ms` : ''}`
+    : up
+      ? `✅ **Online**${site.latencyMs != null ? ` · ${Math.round(site.latencyMs)}ms` : ''}`
+      : `❌ **Offline**${site.error ? `\n${site.error}` : ''}`;
 
-  let maint = '';
+  let maintExtra = '';
   if (site.maintenance?.global) {
-    maint = '\n⚠️ Onderhoud actief';
+    maintExtra = '\n⚠️ Onderhoud actief';
   } else if (site.maintenance?.diensten) {
     const on = Object.entries(site.maintenance.diensten)
       .filter(([, v]) => v)
@@ -52,7 +55,7 @@ function siteField(site) {
 
   return {
     name: `${icon} ${site.name}`,
-    value: statusLine + maint,
+    value: statusLine + maintExtra,
     inline: true,
   };
 }

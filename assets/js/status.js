@@ -102,7 +102,14 @@
         var html = '<div class="status-sites">';
         for (var i = 0; i < sites.length; i++) {
             var s = sites[i];
+            var maint = s.status === 'maintenance' || (s.maintenance && s.maintenance.global);
             var up = s.status === 'up';
+            var pill = maint ? 'maint' : up ? 'up' : 'down';
+            var pillLabel = maint ? 'Onderhoud' : up ? 'Online' : 'Offline';
+            var extra = '';
+            if (maint && s.maintenance && s.maintenance.message) {
+                extra = '<p class="fivem-meta" style="margin-top:0.35rem">' + esc(s.maintenance.message) + '</p>';
+            }
             html +=
                 '<a class="status-site" href="' +
                 esc(s.link) +
@@ -114,11 +121,11 @@
                 esc(s.name) +
                 '</h3><p>' +
                 esc(s.description) +
-                '</p></div>' +
+                '</p>' + extra + '</div>' +
                 '<div><span class="status-pill ' +
-                (up ? 'up' : 'down') +
+                pill +
                 '"><span class="status-pill-dot"></span>' +
-                (up ? 'Online' : 'Offline') +
+                pillLabel +
                 '</span><br><span class="fivem-meta">' +
                 ms(s.latencyMs) +
                 '</span></div></a>';

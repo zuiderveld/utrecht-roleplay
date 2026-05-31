@@ -30,7 +30,7 @@ const DEFAULT_SITES = {
       name: 'Staff portaal',
       description: 'Staff dashboard',
       url: 'https://staff.utrechtroleplay.eu',
-      checkPath: '/api/site-data',
+      checkPath: '/api/maintenance',
       fallbackPath: '/',
       link: 'https://staff.utrechtroleplay.eu/',
       icon: 'shield',
@@ -132,17 +132,25 @@ async function checkSite(site) {
     last = await probeUrl(base + usedPath);
     if (last.up) break;
   }
-  const maintenance =
-    site.id === 'overheid' && last?.body && typeof last.body.global === 'boolean'
-      ? { global: !!last.body.global, diensten: last.body.diensten || null }
-      : null;
+  let maintenance = null;
+  if (last?.body && typeof last.body.global === 'boolean') {
+    if (site.id === 'overheid') {
+      maintenance = { global: !!last.body.global, diensten: last.body.diensten || null };
+    } else if (site.id === 'staff') {
+      maintenance = {
+        global: !!last.body.global,
+        message: last.body.message || null,
+      };
+    }
+  }
+  const onMaint = maintenance?.global;
   return {
     id: site.id,
     name: site.name,
     description: site.description || '',
     link: site.link || base,
     icon: site.icon || 'globe',
-    status: last.up ? 'up' : 'down',
+    status: onMaint ? 'maintenance' : last.up ? 'up' : 'down',
     latencyMs: last.latencyMs,
     error: last.up ? null : last.error || `HTTP ${last.httpStatus}`,
     maintenance,
@@ -175,8 +183,9 @@ async function checkFivem(cfg) {
 
 function summarize(sites, fivem) {
   const down = sites.filter((s) => s.status === 'down').length;
+  const maint = sites.filter((s) => s.status === 'maintenance').length;
   if (down > 0) return 'outage';
-  if (fivem?.enabled && fivem.status === 'down') return 'degraded';
+  if (maint > 0 || (fivem?.enabled && fivem.status === 'down')) return 'degraded';
   return 'operational';
 }
 
@@ -200,4 +209,4 @@ async function getFullStatus() {
   };
 }
 
-module.exports = { getFullStatus };
+module.exports = { getFullStatus, checkFivem, loadFivemConfig };
