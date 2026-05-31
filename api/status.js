@@ -3,17 +3,66 @@ const path = require('path');
 
 const CHECK_TIMEOUT_MS = 15000;
 
+/** Fallback als data/ niet op Vercel zit (alleen api/ geüpload) */
+const DEFAULT_SITES = {
+  sites: [
+    {
+      id: 'main',
+      name: 'Hoofdwebsite',
+      description: 'Utrecht Roleplay',
+      url: 'https://www.utrechtroleplay.eu',
+      checkPath: '/',
+      link: 'https://www.utrechtroleplay.eu',
+      icon: 'globe',
+    },
+    {
+      id: 'overheid',
+      name: 'Overheid portaal',
+      description: 'Politie, KMar, Ambulance, Pechhulp',
+      url: 'https://overheid.utrechtroleplay.eu',
+      checkPath: '/api/maintenance',
+      fallbackPath: '/',
+      link: 'https://overheid.utrechtroleplay.eu/',
+      icon: 'landmark',
+    },
+    {
+      id: 'staff',
+      name: 'Staff portaal',
+      description: 'Staff dashboard',
+      url: 'https://staff.utrechtroleplay.eu',
+      checkPath: '/api/site-data',
+      fallbackPath: '/',
+      link: 'https://staff.utrechtroleplay.eu/',
+      icon: 'shield',
+    },
+  ],
+};
+
+const DEFAULT_FIVEM = {
+  enabled: true,
+  host: '45.116.104.215',
+  port: 30120,
+  name: 'FiveM server',
+};
+
 function readJson(relPath, fallback) {
-  try {
-    return JSON.parse(fs.readFileSync(path.join(process.cwd(), relPath), 'utf8'));
-  } catch {
-    return fallback;
+  const candidates = [
+    path.join(process.cwd(), relPath),
+    path.join(__dirname, '..', relPath),
+  ];
+  for (const filePath of candidates) {
+    try {
+      return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    } catch {
+      /* volgende pad */
+    }
   }
+  return fallback;
 }
 
 function loadSites() {
-  const raw = readJson('data/status-sites.json', { sites: [] });
-  const sites = Array.isArray(raw.sites) ? raw.sites : [];
+  const raw = readJson('data/status-sites.json', DEFAULT_SITES);
+  const sites = Array.isArray(raw.sites) ? raw.sites : DEFAULT_SITES.sites;
   return sites.map((site) => {
     const key = `STATUS_URL_${(site.id || '').toUpperCase().replace(/-/g, '_')}`;
     const override = process.env[key];
@@ -23,7 +72,7 @@ function loadSites() {
 }
 
 function loadFivemConfig() {
-  const file = readJson('data/fivem.json', { enabled: false });
+  const file = readJson('data/fivem.json', DEFAULT_FIVEM);
   const enabled = process.env.FIVEM_ENABLED !== 'false' && file.enabled !== false;
   const host = (process.env.FIVEM_HOST || file.host || '').trim();
   const port = Number(process.env.FIVEM_PORT || file.port || 30120);
@@ -147,11 +196,16 @@ async function getFullStatus() {
     Promise.all(loadSites().map(checkSite)),
     checkFivem(loadFivemConfig()),
   ]);
+  const fivemOut = fivem.enabled ? fivem : null;
   return {
     overall: summarize(sites, fivem),
     checkedAt: new Date().toISOString(),
     sites,
-    fivem: fivem.enabled ? fivem : null,
+    fivem: fivemOut,
+    meta: {
+      sitesConfigured: sites.length,
+      fivemConfigured: !!fivem.enabled,
+    },
   };
 }
 

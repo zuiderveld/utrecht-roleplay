@@ -1,4 +1,9 @@
 {
   "buildCommand": null,
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "functions": {
+    "api/status.js": {
+      "includeFiles": "data/**"
+    }
+  }
 }

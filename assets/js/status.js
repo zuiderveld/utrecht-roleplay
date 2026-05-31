@@ -43,7 +43,7 @@
     }
 
     function renderFivem(f) {
-        if (!f || !f.enabled) return '';
+        if (!f) return '';
         var on = f.status === 'up';
         var c = f.clients || 0;
         var m = f.maxClients || 128;
