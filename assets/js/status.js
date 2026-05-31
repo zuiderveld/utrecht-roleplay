@@ -162,6 +162,7 @@
                 });
             })
             .then(function (data) {
+                if (data.fivem) delete data.fivem.players;
                 document.getElementById('statusAlert').innerHTML = renderAlert(
                     data.overall,
                     data.checkedAt,
