@@ -1,0 +1,1581 @@
+Utrecht Roleplay | APV
+
+
+
+ALGEMENE REGELS (APV)
+
+UTRECHT ROLEPLAY
+
+62 Artikelen  |  Wet- en Regelgeving
+
+Officieel regelwerk voor alle spelers en staff
+
+Utrecht Roleplay  |  2026
+
+INHOUDSOPGAVE
+
+
+
+Strafcategorieen Overzicht        3
+
+Artikel 1-5: Spelintegriteit        5
+
+Artikel 6-10: Roleplay Gedrag        8
+
+Artikel 11-15: Communicatie & Metagamen        12
+
+Artikel 16-20: Voertuigen & Kleding        14
+
+Artikel 21-25: Karakter & Reports        16
+
+Artikel 26-30: Criminele Activiteiten        17
+
+Artikel 31-35: Groeperingen & Gangwars        20
+
+Artikel 36-40: Ontvoeren & Gangregels        22
+
+Artikel 41-45: Wraak & Hulpdiensten        24
+
+Artikel 46-50: Streamers & Algemeen        26
+
+Artikel 51-55: Toxiciteit & Staff        28
+
+Artikel 56-62: Eiland & APV        30
+
+
+
+
+
+Strafcategorieën OverzichtHet volgende overzicht toont alle straf categorieën die in deze regels worden gebruikt. Elke categorie heeft een specifieke sanctie.
+
+Categorie
+
+Sanctie
+
+Omschrijving
+
+Categorie 1
+
+Waarschuwing of korte ban (0-6 uur)
+
+Kleine overtredingen
+
+Categorie 2
+
+Ban 6-24 uur
+
+Middelgrote overtredingen
+
+Categorie 3
+
+Ban 24-72 uur
+
+Ernstige overtredingen
+
+Categorie 4
+
+Ban 3-7 dagen
+
+Zeer ernstige overtredingen
+
+Categorie 5
+
+Ban 7-14 dagen
+
+Zware overtredingen
+
+Categorie 6
+
+Ban 14-30 dagen
+
+Structurele overtredingen
+
+Categorie 7
+
+Ban 30 dagen
+
+Extreme overtredingen
+
+Categorie 8
+
+Ban 30+ dagen + accountwipe
+
+Economische fraude
+
+Categorie 9
+
+Permanente ban
+
+Cheats, alts, ernstige misdragingen
+
+Strafverzwaring: Bij herhaling wordt de straf met een categorie verhoogd (dus volgende keer Categorie 2, daarna 3, etc.).
+
+Artikel 1-5: SpelintegriteitArtikel 1: Cheats & Ongeoorloofde Software  Categorie 9
+
+Wat houdt dit in? Het gebruik van software van derden die bedoeld is om een oneerlijk voordeel te behalen in het spel is ten strengste verboden. Dit omvat alle vormen van cheats, hacks, aimbots, wallhacks, ESP, snelheidshacks, en elke andere modificatie die de normale spelervaring beinvloedt.
+
+Ook als je op andere servers betrapt bent op cheatgebruik en wij hier duidelijk bewijs van hebben, behouden wij het recht om je te weren. Het maakt niet uit of de cheat actief gebruikt werd op Utrecht Roleplay of alleen in het systeem aanwezig was. Wij hanteren een zero-tolerancebeleid voor cheaters.
+
+Bij verdenking volgt een onderzoek; bij bewijs volgt een permanente verwijdering van de server.
+
+Straf: Directe permanente ban (Categorie 9) zonder kans op rehabilitatie, tenzij er uitzonderlijke omstandigheden zijn die ter beoordeling van het hoofdteam worden voorgelegd.
+
+Artikel 1A: Externe Software & Instellingen  Categorie 7
+
+Wat houdt dit in? Programma's of hardware-instellingen die je een oneerlijk voordeel geven in gevechtssituaties zijn niet toegestaan. Het gaat hier om software die niet als cheat wordt gezien maar wel het speelveld onevenwichtig maakt.
+
+Voorbeelden van verboden zaken:
+
+•  Crosshairs: Een vizier op je scherm dat niet standaard in het spel zit, ook niet ingebouwd in je monitormenu.
+
+•  Aangepaste resoluties: Resoluties die het zicht vergroten of camerastandpunten wijzigen (bijv. ultrawide uitrekken).
+
+•  ReShade: Kleur-, contrast- of scherpteaanpassingen die spelers beter zichtbaar maken in donkere omgevingen.
+
+•  Macro's: Toetsenbord- of muismacro's die meerdere acties combineren in een druk.
+
+Toegestane resoluties: Uitsluitend AUTO, 16:9 (bijv. 1920x1080, 2560x1440) of 16:10 (bijv. 1920x1200). Elke andere resolutie die voordeel biedt, wordt beschouwd als een overtreding.
+
+Straf: Categorie 7 (tijdelijke ban van 7 tot 14 dagen, afhankelijk van ernst en herhaling).
+
+Artikel 2: Exploits & Bugs  Categorie 3 t/m 7 + Accountwipe
+
+Wat houdt dit in? Een bug of exploit is een fout in het spel die onbedoeld gedrag mogelijk maakt. Het doelbewust gebruiken van zo'n fout om jezelf of anderen te bevoordelen is verboden. Je bent verplicht om bugs te melden via de daarvoor bestemde kanalen, niet om ze te misbruiken.
+
+Categorie 6 (ban 3-7 dagen)•  Emotes (zoals dansen, liggen, zitten) gebruiken om door muren of deuren te komen.
+
+•  Emotes gebruiken om te ontsnappen uit de gevangenis of andere restricted areas.
+
+•  Acties uitvoeren terwijl je personage dood is, zoals blijven praten of items gebruiken.
+
+Categorie 7 (ban 7-14 dagen)•  Het opzettelijk dupliceren (kopieren) van in-game items, geld of voertuigen.
+
+•  Het niet melden van gedupliceerde items na een serverrestart of crash.
+
+•  Het verspreiden van gedupliceerde items naar andere spelers.
+
+Categorie 4 (ban 24-72 uur)•  Misbruik van de 'one punch'-bug (een onbedoelde instant-kill met een vuistslag).
+
+Accountwipe + Categorie 7Bij vastgesteld misbruik van duplicatiebugs worden niet alleen je accountgegevens gewist (geld, items, voertuigen, eigendommen), maar ontvang je ook een ban van categorie 7. Dit geldt ook voor het ontvangen van gedupliceerde goederen als je wist of had kunnen weten dat ze niet legitiem waren.
+
+Artikel 2A: Real-Life Handel (IRL Trade)  Categorie 8
+
+Wat houdt dit in? Het kopen of verkopen van alles wat zich binnen de Utrecht Roleplay-server bevindt tegen echt geld is verboden. Dit beschermt de integriteit van de in-game economie en voorkomt dat geldelijke belangen het roleplay-plezier verstoren.
+
+Wat valt er onder IRL Trade?
+
+•  In-game geld (zwart, wit, of anders).
+
+•  In-game items (wapens, drugs, voertuigen, grondstoffen, huisrechten).
+
+•  Diensten (bijv. ik vermoord X voor Y euro echt geld).
+
+•  Accounts (je eigen account verkopen of een account kopen).
+
+Het maakt niet uit of de transactie plaatsvindt via PayPal, Tikkie, Cryptovaluta, Steamcadeaubonnen, of een ander medium. Ook ruilhandel waarbij een tegenprestatie buiten het spel plaatsvindt valt hieronder.
+
+Straf: Categorie 8 (ban van 14 tot 30 dagen, vaak gevolgd door een accountwipe. Bij herhaling permanente ban).
+
+Artikel 3: Alt Characters  Categorie 9
+
+Wat houdt dit in? Een alt character (alternatief account) is een extra account waarmee je op de server speelt naast je hoofdaccount. Het hebben van een alt is op zich niet altijd verboden, maar wel het gebruik ervan voor oneerlijke doeleinden.
+
+Verboden handelingen:
+
+•  Geld of items overdragen van je alt naar je hoofdaccount of andersom.
+
+•  Je alt gebruiken om extra startersgeld, gratis items of andere voordelen te verzamelen.
+
+•  Je alt inzetten om je hoofdaccount te helpen in conflicten (bijv. als verkenner of extra schutter).
+
+•  Het omzeilen van een actieve ban door een nieuw account aan te maken (spoofing).
+
+Toegestaan: Een tweede karakter op hetzelfde account (via F5 of vergelijkbaar systeem) is toegestaan, mits je beide personages als losse individuen roleplayt en geen voordelen overdraagt.
+
+Straf: Categorie 9 (permanente ban voor alle betrokken accounts, inclusief IP- en hardware-blokkade bij herhaling).
+
+Artikel 3A: Startersgeld  Categorie 8
+
+Wat houdt dit in? Iedere nieuwe speler ontvangt eenmalig startersgeld om een vliegende start te kunnen maken. Dit geld is bedoeld om je eigen personage op te bouwen, niet om weg te geven aan anderen.
+
+Verboden situaties:
+
+•  Je geeft je startersgeld aan een andere speler zonder de intentie om zelf actief te gaan spelen.
+
+•  Je wacht de verplichte speeltijd af (bijv. door AFK te zijn) en maakt dan pas het geld over naar iemand anders.
+
+•  Je maakt een nieuw account aan om opnieuw startersgeld te krijgen en geeft dat weg.
+
+Let op: Zowel gever als ontvanger krijgen dezelfde straf. Als jij startersgeld ontvangt van iemand waarvan je weet (of had kunnen weten) dat het om startersgeld gaat, ben je medeplichtig.
+
+Straf: Categorie 8 (ban 14-30 dagen + accountwipe voor beide partijen).
+
+Artikel 4: Bedreiging & Intimidatie  Categorie 8
+
+Wat houdt dit in? Gedragingen buiten het spel om die andere spelers of staffleden angst aanjagen, deren of benadelen zijn ten strengste verboden. De server is een veilige omgeving voor iedereen.
+
+Specifieke verboden handelingen:
+
+•  Real-life bedreigingen: Het dreigen met fysiek geweld, het beschadigen van eigendommen, of andere vormen van intimidatie in het echte leven.
+
+•  Doxing: Het openbaar maken van privegegevens zoals woonadres, telefoonnummer, e-mailadres, of namen van familieleden.
+
+•  DDoS-aanvallen: Het opzettelijk lamleggen van iemands internetverbinding of computer.
+
+Belangrijk: Deze regels gelden ook voor grapjes. "Het was maar een grap" is geen excuus als de ontvanger zich bedreigd voelt. Meldingen worden altijd serieus onderzocht.
+
+Straf: Categorie 8 (directe permanente ban, vaak in combinatie met een melding bij de autoriteiten bij ernstige bedreigingen).
+
+Artikel 5: Fail RP  Categorie 4
+
+Wat houdt dit in? Fail RP (Fail Roleplay) omvat alle situaties waarin je handelt op een manier die niet past binnen de realistische wereld van Utrecht Roleplay. De kernvraag is altijd: "Zou dit in het echt ook kunnen gebeuren?"
+
+5.1 AlgemeenVerboden voorbeelden:
+
+•  Geen roleplay vertonen bij ernstige verwondingen of aanrijdingen (bijv. doorrennen met een gebroken been).
+
+•  Emotes spammen zonder roleplay-doel.
+
+•  Praten via portofoon of telefoon terwijl je onder water bent.
+
+•  Het F6-menu gebruiken om scenario's te ontlopen.
+
+•  Zomaar iemands banden leksteken zonder goede roleplay-reden.
+
+•  Praten terwijl je personage dood is (maak dan een report aan).
+
+•  Alleen je eigen belang nastreven ten koste van andermans roleplay.
+
+Medische regel: Als een burger doodgeschoten is, moet medisch personeel hem/haar meenemen naar het ziekenhuis voor behandeling. Behandeling ter plekke is niet toegestaan, tenzij de omstandigheden dit echt onmogelijk maken (bijv. gijzeling).
+
+5.2 Verwondingen uitspelenJe moet verwondingen uitspelen in de volgende situaties:
+
+Situatie
+
+Minimale snelheid
+
+Over de kop gaan
+
+&gt; 40 km/u
+
+Crash tegen onverwoestbaar object (gebouw, paal)
+
+&gt; 85 km/u
+
+Crash tegen ander voertuig
+
+&gt; 85 km/u
+
+Crash met motor
+
+&gt; 55 km/u
+
+Van motor afgeschoten worden
+
+&gt; 55 km/u
+
+Uitzonderingen (geen verwondingen): Je voertuig schraapt tegen een railing, of je voertuig schuift op zijn kant en komt weer op de wielen terecht.
+
+Extra gevallen: Je ontvangt een crash-effect (het scherm trilt, personage reageert geschrokken), of je maakt stuntbewegingen (barrel rolls, over de kop vliegen), ongeacht hoe je landt.
+
+5.3 Banden schietenToegestaan wanneer:
+
+•  Jij of je gang wordt gewaarschuwd om stil te staan (bijv. "Stop of we schieten je banden lek").
+
+•  Je wordt langer dan 5 minuten achtervolgd door minimaal 2 politievoertuigen.
+
+•  Je iemand twee keer hebt gewaarschuwd om af te koppelen (niet blijven volgen) en hij/zij blijft volgen.
+
+•  Je al beschoten bent door die persoon of diens gang.
+
+•  Je ziet dat iemand een vuurwapen draagt (bijv. via deepweb-bericht of portofoon).
+
+Waarschuwingen: Een waarschuwing blijft geldig tot het scenario eindigt. Een waarschuwing is echter geen reden om iemand te "rippen" (doden en beroven), tenzij er volgens de APV ripbare woorden aan worden toegevoegd.
+
+5.4 Mengen met politiescenario'sNiet toegestaan:
+
+•  Meerijden met een politieachtervolging als toeschouwer.
+
+•  Stil staan of lopen bij een staandehouding om te kijken wat er gebeurt.
+
+•  Actief mengen in een scenario zonder dat je er deel van uitmaakt.
+
+Uitzondering: Je mag wel mengen als de achtervolgde of staandegehouden jou daarom vraagt. Gangleden mogen altijd hun eigen ganglid helpen, tenzij er specifieke gangwar-regels van toepassing zijn.
+
+5.5 Voertuig stelenToegestaan: Een onbemand voertuig dat langs de weg staat en nergens bij betrokken is.
+
+Niet toegestaan (Categorie 3):
+
+•  Een voertuig stelen terwijl de eigenaar ermee bezig is (in- of uitladen van goederen).
+
+•  Een voertuig stelen terwijl de eigenaar tankt bij een benzinestation.
+
+•  Een voertuig stelen terwijl de eigenaar het reparert (bijv. met repair kit).
+
+5.6 Campen op drugslocatiesDefinitie: Campen is het langer dan 2 minuten verblijven op of rond een drugslocatie met als doel illegale activiteiten te verrichten of te verstoren.
+
+Verboden:
+
+•  Wachten (zichtbaar of verborgen in bosjes) om goederen uit een bus te halen.
+
+•  Wachten om een voertuig mee te nemen dat niet van jou is.
+
+•  Wachten om mensen te beroven van wapens, geld of drugs.
+
+•  Stil staan rondom witwas- of verkooplocaties.
+
+Toegestaan: Rondrijden in de wijk waar de locatie zich bevindt is toegestaan, zolang je niet stil gaat staan in de directe omgeving.
+
+5.7 Loading screens & Appartementen campenLoading screens: Het misbruiken van laadschermen is verboden. Wanneer een speler uit een loading screen komt, moet hij/zij altijd de tijd krijgen om te reageren. Je mag niet direct schieten of boeien terwijl iemand nog aan het laden is.
+
+Appartementen campen: Campen bij appartementen is toegestaan, maar nooit op dezelfde postcode als het appartement zelf.
+
+Straf: Categorie 4 (ban 24-72 uur).
+
+Artikel 6-10: Roleplay GedragArtikel 6: Powergamen  Categorie 3
+
+Wat houdt dit in? Powergamen is het opzettelijk veranderen van een roleplay-scenario door onrealistische elementen toe te voegen, waardoor de andere partij geen kans krijgt om realistisch te reageren. Het draait om het forceren van een uitkomst.
+
+6.1 VoorbeeldenVerboden handelingen:
+
+•  Vluchten in appartement tijdens scenario: Je rent tijdens een achtervolging of schietpartij je appartement binnen omdat je daar veilig bent.
+
+•  Wapen wegstoppen binnen 10 minuten: Na het trekken van je wapen mag je deze niet binnen 10 minuten wegstoppen of de stad verlaten.
+
+•  DEL-menu misbruiken: Het spelersmenu (DEL-toets) gebruiken om ID's van spelers te vinden en zo te weten waar ze zijn.
+
+•  Eiland gebruiken om RDM te omzeilen: Iemand meenemen naar het eiland om hem daar te doden zodat het niet als RDM telt.
+
+•  Medisch personeel dwingen: Een ambulancemedewerker dwingen om iemand te reanimeren, zodat jij direct daarna het wapen van diegene kunt afpakken.
+
+•  Communicatie onder water: Praten in porto of telefoon terwijl je dood bent of onder water.
+
+•  Overheidsmedewerkers ontvoeren: Ontvoeren om een signalering te verwijderen of in het MEOS-systeem te kijken.
+
+•  Fouilleren onder dwang: Een ambtenaar dwingen een bewusteloze burger te fouilleren, items af te nemen en aan jou te geven.
+
+•  Handen omhoog misbruik: Als je handen omhoog hebt, werk je mee. Snel switchen naar richten is niet toegestaan; er geldt een afkoelperiode van 10 seconden.
+
+6.2 Emote abuseVerboden:
+
+•  Emotes (zoals F5 liggen) gebruiken terwijl je beschoten wordt om kleiner te lijken.
+
+•  In F5 liggen achter een muur om in third-person over de muur heen te kijken zonder zichtbaar te zijn.
+
+•  Emotes spammen om door muren of vloeren te vallen (valt ook onder Artikel 2: Exploits).
+
+6.3 Third-person misbruikVoertuigen gebruiken om over muren heen te kijken, hetzij fysiek door te rijden, hetzij door de third-person camera te gebruiken terwijl je achter een muur staat.
+
+6.4 Vastbinden•  Iemand vastbinden met tiewraps of via het F6-menu mag alleen met een geldige roleplay-reden (bijv. gijzeling, ontvoering, arrestatie).
+
+•  Vastbinden via "/me bind vast" is niet toegestaan. Handelingen die je fysiek in het spel kunt uitvoeren (via F6 of tiewraps) moeten ook op die manier gebeuren.
+
+6.5 Shootouts & achtervolgingen•  In een shootout je handen omhoog doen om te voorkomen dat een agent je doodschiet is niet toegestaan. Dit geldt niet voor fights tussen gangs onderling, daar mag je je overgeven.
+
+•  Tijdens een achtervolging mag je je voertuig niet in de garage zetten om te ontsnappen. Als je van voertuig wisselt, laat je het oude voertuig staan waar het is.
+
+6.6 Dwang op ambtenarenVerboden:
+
+•  Een ambtenaar dwingen een bewusteloos persoon te fouilleren en items af te geven.
+
+•  Onder dwang iemands voertuig uit de garage laten halen (alleen als je dat voertuig aantoonbaar hebt zien rijden bij illegale activiteiten).
+
+•  Een agent gijzelen om een auto uit de impound te halen.
+
+6.7 Campen bij beschermde locatiesNiet toegestaan om de volgende locaties te campen:
+
+
+
+•  Politie Hoofdbureaus (alle locaties)
+
+•  DSI Headquarters
+
+•  Alle ziekenhuizen
+
+•  Erkende gangterreinen (de buurt/wijk waar een gang officieel gevestigd is)
+
+Uitzondering: De politie mag bij ziekenhuizen aanwezig zijn na een check-in melding (bijv. een neergeschoten burger wordt binnengebracht).
+
+Straf: Categorie 3 (ban 24-72 uur).
+
+Artikel 7: Karakter breken / OOC  Categorie 1
+
+Wat houdt dit in? Alles wat buiten je personage (Out Of Character) valt, hoort niet thuis in de in-character wereld. Je speelt een rol; blijf in die rol.
+
+7.1 Verboden woorden/termenDe volgende woorden zijn te allen tijde verboden in de in-character wereld:
+
+
+
+•  "staff" (zeg bijvoorbeeld "de autoriteiten" of "de beheerders")
+
+•  "broodje" (bedoeld als "report" of "ticket")
+
+•  "tickets" (zeg gewoon wat er aan de hand is)
+
+•  "refund" (spreek het uit als "terugbetaling")
+
+•  "bug" (zeg "storing" of "foutje in het systeem")
+
+7.2 TaalAlleen Nederlands en Engels zijn toegestaan in de in-character wereld. Andere talen zijn niet toegestaan, tenzij je hiervoor expliciet toestemming hebt gekregen van een stafflid.
+
+7.3 PortofoonOok in de portofoon mag je je karakter niet breken. Blijf in je rol. Een stafflid mag altijd een waarschuwing (warn) uitdelen wanneer een speler zijn/haar karakter breekt, ook in de porto.
+
+7.4 Ban/warn vermeldenHet is verboden om in de stad te praten over een ban of warn die je hebt gekregen, ook niet onder de noemer "ik ben op vakantie geweest" of andere smoesjes. Wat er achter de schermen gebeurt, blijft achter de schermen.
+
+Straf: Categorie 1 (waarschuwing of korte ban 0-6 uur).
+
+Artikel 8: Copbaiten  Categorie 1-4
+
+Wat houdt dit in? Copbaiten is het doelbewust uitlokken van politie-reacties zonder geldige roleplay-reden. Je bent aan het "vissen" op een reactie van de overheid.
+
+Lid 1 - Basis Copbaiten (Categorie 1)Voorbeelden:
+
+•  Doelbewust reacties van ambtenaren uitlokken (bijv. "Kom eens kijken dan!" roepen naar een agent).
+
+•  Achtervolgingen starten zonder een illegaal goed of wapen bij je te hebben (puur voor de kick).
+
+•  Een scenario verstoren door steeds heen en weer te rijden bij een overval.
+
+•  Meerijden met een achtervolging die al minuten bezig is zonder dat je er iets mee te maken hebt.
+
+•  Agenten opzettelijk irriteren of afleiden zonder dat er een overval of ander misdrijf gaande is.
+
+Lid 2 - Zwaar Copbaiten (Categorie 4)Voorbeelden:
+
+•  In de lucht schieten om politie te laten komen.
+
+•  Schieten op of in de richting van agenten zonder geldige roleplay-reden.
+
+•  Openlijk zwaaien met een vuurwapen op een drukke plek om reactie uit te lokken.
+
+•  Dreigen met een wapen richting een agent terwijl er geen enkele aanleiding is.
+
+Lid 3 - UitzonderingenHet afleiden van ambtenaren tijdens een actieve overval of criminele actie valt niet onder copbaiten, mits dit onderdeel is van een legitiem scenario. Bijvoorbeeld: een ganglid rijdt langs de politie om hun aandacht te trekken terwijl de rest van de gang de overval pleegt.
+
+Artikel 9: No Value of Life (NVOL)  Categorie 4
+
+Wat houdt dit in? Je bent verplicht om waarde te hechten aan het leven van je personage. Je personage wil niet dood. Je neemt geen onnodige risico's en je werkt mee in levensbedreigende situaties.
+
+9.1 Voorbeelden van NVOL
+
+•  Zelfmoord voor nieuw leven: Je beeindigt opzettelijk je eigen leven (of dat van een ander) om een nieuw leven te starten.
+
+•  Noodknop onder schot: Je drukt op de noodknop terwijl er een wapen op je gericht staat.
+
+•  Porto onder schot: Je klikt meerdere keren je portofoon in of praat erin terwijl er een wapen op je gericht staat.
+
+•  Dekking geven met voertuig: Je rijdt met je voertuig in de vuurlinie om anderen dekking te geven, waardoor je je eigen leven opzettelijk in gevaar brengt.
+
+9.2 Gunpoint regels•  De afstand waarop "gunpoint" (onder schot) geldt, is minimaal de tweede voice range (ongeveer 15-20 meter). Alles daarbuiten is je eigen verantwoordelijkheid.
+
+•  NVOL gaat in op het moment dat het wapen daadwerkelijk op je gericht is, niet wanneer iemand het wapen alleen pakt.
+
+•  Bij een steek- of slagwapen binnen armlengte: je werkt mee of je riskeert neergestoken/neergeslagen te worden.
+
+9.3 Meewerken bij wapendreiging•  Wanneer een wapen op je gericht staat, werk je mee. Dit geldt ook als het wapen even zakt voor het doen van boeien, een /me-commando, of een fouillering.
+
+•  Bij een vuurwapen: altijd meewerken. Zodra het wapen niet meer gericht is (bijv. de schutter draait zich om), mag je zelf acties ondernemen.
+
+•  Buiten een voertuig: je werkt ook mee als er een taser op je gericht staat.
+
+9.4 Blokkades met voertuigen•  Je mag met je voertuig een ander voertuig hinderen (bijv. de weg blokkeren).
+
+•  Je mag een wegblokkade maken met je eigen voertuig.
+
+•  Je mag geen overheidsvoertuigen (politie, ambulance, pechhulp) of voertuigen van non-whitelisted jobs stelen om blokkades mee te maken.
+
+9.5 Herhaalde overtredingBij meer dan een overtreding van dit artikel mag een stafflid een wapen uit je inventaris verwijderen. Je toont aan dat je niet zorgvuldig met je leven omgaat, dus vertrouwen we je ook niet met een vuurwapen.
+
+Straf: Categorie 4 (ban 24-72 uur). Bij herhaling wapen inleveren.
+
+Artikel 10: New Life Rule (NLR)  Categorie 2
+
+Wat houdt dit in? Wanneer je personage doodgaat, vergeet je alles wat er in dat specifieke roleplay-scenario is gebeurd. Je begint met een schone lei, alsof je nooit betrokken bent geweest.
+
+•  Je mag niet meer deelnemen aan hetzelfde scenario na je dood. Ook niet als je gereanimeerd bent door de ambulance (dan ben je nog steeds dezelfde persoon met dezelfde herinneringen, maar de NLR geldt alleen na daadwerkelijke 'dood' zoals een respawn).
+
+•  Dit geldt ook voor scenario's die over meerdere dagen zijn verdeeld. Als je op dag 1 sterft in een conflict, mag je op dag 2 niet zomaar wraak nemen met informatie uit dag 1.
+
+•  Bij overlijden tijdens een gangwar (door welke omstandigheid dan ook, inclusief verkeersongeluk of politiekogel): je mag niet meer deelnemen aan die specifieke gangwar.
+
+Straf: Categorie 2 (ban 6-24 uur).
+
+Artikel 11-15: Communicatie & MetagamenArtikel 11: Microfoon  Categorie 1-2
+
+Wat houdt dit in? Een werkende microfoon is verplicht. Typen alleen is niet voldoende voor roleplay.
+
+11.1 Werkende microfoon (Categorie 2)•  Push-to-talk is verplicht. Je mag geen last hebben van achtergrondgeluiden (ademhaling, toetsenbord, muziek, huisdieren, familieleden).
+
+•  Gebruik een noise gate of mute-knop als dat nodig is.
+
+•  Bij bewijs dat je microfoon weer werkt (na een technisch probleem), krijg je een unban.
+
+11.2 Voice changer (Categorie 1)Voice changers zijn alleen toegestaan bij onderwereldactiviteiten zoals drugsdeals, wapendeals, rippen (beroving), en overvallen. Speciale eenheden van de politie/marechaussee mogen ook een voice changer gebruiken ter bescherming van hun identiteit. Voor alle andere situaties is een voice changer verboden.
+
+11.3 Soundpad (Categorie 1)Het misbruiken of onnodig gebruiken van een soundpad is niet toegestaan. Je hebt altijd expliciete toestemming nodig van een admin of hoger om een soundpad te gebruiken.
+
+Straf: Categorie 1-2 (waarschuwing tot ban 6-24 uur).
+
+Artikel 12: Earrape  Categorie 1
+
+Wat houdt dit in? Earrape is het maken van onnodig veel lawaai met je microfoon of soundpad, waardoor het niet normaal te verdragen is voor andere spelers. Dit is niet alleen vervelend, maar kan ook gehoorschade veroorzaken bij mensen met een koptelefoon.
+
+Voorbeelden:
+
+•  Schreeuwen in de microfoon op een dusdanig volume dat het pijn doet.
+
+•  Harde, krasende, of piepende geluiden maken via je microfoon of soundpad.
+
+•  Muziek afspelen op een veel te hoog volume.
+
+•  Feedback of ruis veroorzaken die het gesprek onmogelijk maakt.
+
+Let op: Eenmalig een hard geluid per ongeluk is vervelend, maar geen earrape. Het gaat om het structureel of opzettelijk veroorzaken van overlast.
+
+Straf: Categorie 1 (waarschuwing of korte ban 0-6 uur).
+
+Artikel 13: VDM  Categorie 2 of 4
+
+Wat houdt dit in? VDM (Vehicle Deathmatch) is het opzettelijk gebruiken van een voertuig als wapen om een andere speler te doden of te schaden. Het voertuig is geen excuus voor RDM.
+
+Situatie
+
+Categorie
+
+Sanctie
+
+1 slachtoffer
+
+Categorie 2
+
+Ban 6-24 uur
+
+Meerdere slachtoffers
+
+Categorie 4
+
+Ban 3-7 dagen
+
+Uitzonderingen: Per ongeluk iemand aanrijden is geen VDM, maar kan wel Fail RP zijn als je onrealistisch rijdt. Iemand aanrijden tijdens een legitieme achtervolging of ontsnapping is geen VDM zolang het niet opzettelijk is om te doden.
+
+Artikel 14: RDM  Categorie 4
+
+Wat houdt dit in? RDM (Random Deathmatch) is het willekeurig vermoorden van een speler zonder geldige roleplay-reden. Elke moord moet een logische, in-character aanleiding hebben.
+
+14.1 Geen geldige redenDe volgende situaties zijn geen geldige reden om iemand te vermoorden:
+
+•  Iemand rijdt per ongeluk tegen je aan (geef een waarschuwing, rijd weg, of zoek een andere oplossing).
+
+•  Iemand weigert te "blaffen", "zingen", "dansen" of andere vernederende dingen te doen.
+
+•  Iemand kijkt je verkeerd aan.
+
+•  Iemand heeft een "grote mond" (escaleer dan eerst, schiet niet direct).
+
+14.2 Wel toegestaan•  Uitdagen via Birdy: Je mag iemand uitdagen via Birdy (met bewijs dat het om die persoon gaat). Birdy-media mag in-game als informatie worden gebruikt om iemand te vinden en te doden.
+
+•  Doelbewust een gang uitdagen: Je mag een gang uitdagen via in-character kanalen.
+
+14.3 Op eigen risico•  Waarschuwen wordt gezien als dreiging: Als je iemand waarschuwt met de woorden "handen omhoog of je bent dood", mag die persoon je direct uit zijn/haar voertuig doodschieten.
+
+•  Wegrijden tijdens wapenbedreiging: Word je doodgeschoten nadat je wegreed terwijl er een wapen op je gericht was, dan is dat geen RDM.
+
+•  Verbaal provoceren: Als je anderen verbaal provoceert, loop je het risico dat ze overgaan tot actie.
+
+•  Rijden in een groep met herkenningspunten: Als je groep dezelfde kleur voertuigen, velgen of kleding heeft, is het eigen risico.
+
+14.4 Verplichtingen•  Voor een moord moet je altijd de reden kunnen benoemen (uitzondering: tijdens een actieve shootout of gangwar).
+
+•  De reden mag niet verzonnen zijn. Er moet bewijs zijn (clip of screenshots).
+
+•  Kill on Sight (KOS) wordt bestraft als RDM. Je mag niet zomaar iedereen van een bepaalde groep doden zonder dat er een actief conflict is.
+
+14.5 Gang verlatenWanneer een speler een gang verlaat of wordt gekickt, hebben beide partijen 48 uur om elkaar te vermoorden met deze reden. Na 48 uur valt het onder RDM.
+
+14.6 Strafmaat•  Eerste overtreding: Categorie 4 (ban 24-72 uur)
+
+•  Tweede overtreding: Categorie 4 + wapen inleveren (stafflid neemt een wapen naar keuze af)
+
+Artikel 15: Metagamen  Categorie 3
+
+Wat houdt dit in? Metagamen is het gebruiken van informatie die je buiten je personage om hebt verkregen. Jouw personage weet alleen wat hij/zij in het spel heeft gezien, gehoord of meegemaakt.
+
+Voorbeelden:
+
+•  Informatie via Discord: Je ziet in een Discord-kanaal dat er een overval gaande is op een bepaalde locatie. Jouw personage weet dat niet.
+
+•  Screensharen: Je deelt je scherm met anderen terwijl je in Utrecht Roleplay bent, zodat zij kunnen meekijken.
+
+•  Praten in een call: Je bent in een voicecall (Discord, Teamspeak, etc.) terwijl je speelt. Je moet jezelf muten als je in een scenario zit.
+
+•  In-game info versturen naar Discord: Je ziet in-game dat iemand een wapen heeft en stuurt dat bericht naar de Utrecht Onderwereld Discord.
+
+•  Social media: Het gebruiken van andere social mediakanalen om in-game informatie te verkrijgen of te verspreiden.
+
+15.1 StreamenAls je Utrecht Roleplay streamt, moet de stream altijd openbaar zijn (tenzij je toestemming hebt voor een privestream vanwege bijzondere omstandigheden). Privestreamen is verboden omdat het metagamen in de hand werkt.
+
+Straf: Categorie 3 (ban 24-72 uur).
+
+Artikel 16-20: Voertuigen & KledingArtikel 16: Voertuig gebruik  Categorie 1
+
+Wat houdt dit in? Dit artikel behandelt alle regels omtrent het gebruik van voertuigen.
+
+16.1 Pitten•  Pitten (een ander voertuig aantikken zodat het spin-out gaat) boven 130 km/u is niet toegestaan.
+
+•  Een groter klasse voertuig pitten is nooit toegestaan, ongeacht de snelheid.
+
+•  Motoren pitten of brake checken is nooit toegestaan (levensgevaarlijk en onrealistisch).
+
+16.2 VoertuigcategorieenEen voertuig mag geen hogere categorie pitten of brake checken. De categorieen van klein naar groot:
+
+Categorie
+
+Voorbeelden
+
+1. Motorvoertuigen (kleinst)
+
+Motoren, scooters
+
+2. Sportauto's en hypercars
+
+Bugatti, Lamborghini
+
+3. Personenauto's
+
+Sedans, coupes
+
+4. SUV's
+
+Range Rover, BMW X5
+
+5. Bussen en vrachtwagens (grootst)
+
+Mercedes 6X6, trucks
+
+16.3 Brake checkenBrake checken (plotseling remmen zodat de achteropkomende auto in je achterkant rijdt) is toegestaan indien realistisch. Dit is volledig op eigen risico; geen refund mogelijk als je auto total loss is.
+
+16.4 Off-road•  Alle voertuigen mogen op zandpaden rijden zonder snelheidslimiet.
+
+•  Voertuigen uit de off-road dealer of met SUV-class mogen volledig off-road rijden (over velden, door bossen).
+
+•  Check je voertuigklasse met de Z-toets (rechtsonder in beeld verschijnt informatie).
+
+•  Off-road banden zijn puur cosmetisch en geven geen rijvoordeel.
+
+16.5 Overige regels•  Gebouwen betreden met ongeschikte voertuigen (bijv. een auto in een winkel) is niet toegestaan.
+
+•  Auto's verkopen via Birdy is toegestaan (maar scammen niet).
+
+•  Lesauto's mogen alleen voor de officiele lesronde worden gebruikt, niet voor priveritjes.
+
+16.6 Voertuigen achterlatenHet achterlaten van auto's, vaartuigen, helikopters en vliegtuigen in de stad (d.w.z. niet in een garage of op een toegestane parkeerplaats) is niet toegestaan. Je krijgt hiervoor een in-game boete.
+
+Artikel 17: GTA Style Driving  Categorie 1
+
+Wat houdt dit in? GTA Style Driving is het onrealistisch rijden met je voertuig, zoals je dat in Grand Theft Auto zonder roleplay zou doen. Utrecht Roleplay streeft naar realisme, ook in het verkeer.
+
+Voorbeelden:
+
+•  Stuntjumps nemen: Van een heuvel of helling afrijden met de bedoeling een sprong te maken.
+
+•  Onrealistisch off-road rijden: Met een gewone personenauto tegen een berg oprijden of door een rivier rijden.
+
+•  Rammen of beuken: Zonder reden andere voertuigen rammen of beuken.
+
+•  Obstakels gebruiken om te springen: Een muur of heuvel gebruiken als springplank.
+
+Lekke banden: Met een of meerdere lekke banden mag je niet harder rijden dan 130 km/u. Een lekke band beperkt je voertuig in realiteit ernstig.
+
+Straf: Categorie 1 (waarschuwing of korte ban 0-6 uur).
+
+Artikel 18: Illegale activiteiten via Birdy/Instapic  Categorie 1
+
+Wat houdt dit in? Birdy en Instapic zijn de in-game sociale media. Ze zijn bedoeld voor roleplay, niet als marktplaats voor illegale goederen.
+
+Niet toegestaan:
+
+•  Vragen voor witwasdiensten.
+
+•  Drugslocaties kopen of verkopen.
+
+•  Wapens aanbieden (ook niet via "PM voor info").
+
+•  Drugs aanbieden, ook met synoniemen.
+
+•  Aanwezigheid van gangs vragen of als gang aanwezig zijn op een locatie via sociale media.
+
+Synoniemen en vervormingen (ook verboden): "Sokken wassen" (witwassen), "Honkbalspullen" (wapens), "Poedersuiker" (cocaine), "Zakjes snoep" (drugs).
+
+Wel toegestaan: Aangeven dat je gijzelaars hebt (maximaal 1-2 keer, spammen = categorie 1). Aangeven dat wapens niet mogen worden afgepakt. Eiland-emoji in Birdy zetten.
+
+Straf: Categorie 1 (waarschuwing).
+
+Artikel 19: Overheidskleding  Categorie 1
+
+Wat houdt dit in? Jezelf voordoen als overheidspersoneel (politie, ambulance, pechhulp) is niet toegestaan. Dit kan leiden tot verwarring en misbruik.
+
+Verboden kleding/accessoires:
+
+•  Kogelwerende vesten met politielogo of andere overheidsvesten (zoals POLICE, AMBULANCE, KOZ, BOA).
+
+•  Pechhulp kleding en accessoires zoals tassen met pechhuplogo's.
+
+•  Ambulance kleding en accessoires zoals tassen met het ambulancelogo.
+
+Uitzondering: Roleplay als undercover agent is toegestaan, maar dan draag je geen herkenbare overheidskleding.
+
+Straf: Categorie 1 (waarschuwing).
+
+Artikel 20: Schelden/beledigen  Categorie 5 of 6
+
+Wat houdt dit in? Kritiek en ruzie in-character mag, maar persoonlijke beledigingen en ziektes zijn niet toegestaan. Dit is bedoeld om een veilige en respectvolle sfeer te behouden.
+
+Overtreding
+
+Strafcategorie
+
+Schelden met ziektes gericht naar een burger (bijv. "kankerlijer")
+
+Categorie 5
+
+Overdreven schelden met ziektes (zelfs niet direct naar iemand gericht)
+
+Categorie 5
+
+Seksuele uitingen of beledigingen van vrouwen (bijv. "hoer", "slet")
+
+Categorie 5
+
+Racistische of discriminerende opmerkingen
+
+Categorie 6
+
+Let op: Als het er een keer uitfloept, is dat vervelend maar heeft het geen direct gevolg (behalve een waarschuwing). Wanneer het met regelmaat voorkomt, krijg je alsnog een straf.
+
+Artikel 21-25: Karakter & ReportsArtikel 21: Standaard outfit  Categorie 1
+
+Wat houdt dit in? Je dient een eigen, unieke outfit te creeren. De standaard zwart-wit geblokte outfit die je krijgt bij het aanmaken van je personage is niet toegestaan.
+
+•  Je dient een volledige outfit te maken (hoofd, bovenlichaam, onderlichaam, schoenen).
+
+•  Armen en benen moeten zichtbaar zijn (geen onzichtbare lichaamsdelen door kledingbugs).
+
+•  Kleding moet goed aansluiten (geen zwevende delen of rare overlappingen).
+
+•  Skinny kleding (strakke kleding die de lichaamsvormen benadrukt) mag niet worden gebruikt tijdens combat situaties. Het is niet toegestaan om een unfair voordeel te behalen door een kleiner hitbox-model te hebben.
+
+Eigen verantwoordelijkheid: Bij problemen met je outfit (bijv. ontbrekende armen of benen door een kledingcombinatie) is het je eigen verantwoordelijkheid om andere kleding aan te schaffen. Geen refunds of uitzonderingen.
+
+Straf: Categorie 1 (waarschuwing).
+
+Artikel 22: Combatloggen  Categorie 4
+
+Wat houdt dit in? Het is verboden om tijdens een actief roleplay-scenario de server te verlaten, of het spel af te sluiten. Dit wordt gezien als vluchten voor de consequenties.
+
+•  Bij een onvrijwillige disconnect (internetuitval, crash) heb je 5 minuten de tijd om terug te keren naar hetzelfde scenario. Lukt dat niet, dan accepteer je de gevolgen.
+
+•  Je dient een scenario altijd af te maken, ook als je aan het verliezen bent.
+
+•  De stad verlaten (door te disconnecten) nadat je personage is doodgeschoten is ook combatloggen. Je accepteert de dood en respawnt.
+
+Uitzondering: Als je echt moet vertrekken (noodgeval, real-life verplichting), overleg dit dan met de betrokkenen in het scenario of met een stafflid.
+
+Straf: Categorie 4 (ban 24-72 uur).
+
+Artikel 23: Stream sniping  Categorie 3
+
+Wat houdt dit in? Stream sniping is het gebruiken van informatie uit de livestream van een andere speler of content creator, van welk platform dan ook (Twitch, YouTube, Kick, etc.). Dit valt onder metagaming.
+
+Voorbeelden:
+
+•  Je kijkt naar de stream van een agent en ziet waar hij een wegblokkade opzet, dus je rijdt een andere route.
+
+•  Je ziet in een stream dat iemand een wapen in zijn tas heeft, dus je gaat hem beroven.
+
+•  Je hoort in een stream waar een schatverstopplaats is en gaat daarheen.
+
+Let op: Als je zelf streamt, zorg er dan voor dat je een streamdelay hebt van minimaal 30 seconden om stream sniping te bemoeilijken.
+
+Straf: Categorie 3 (ban 24-72 uur).
+
+Artikel 24: Job voertuigen  Categorie 1
+
+Wat houdt dit in? Dit artikel geldt voor non-whitelisted jobs (banen die je zonder sollicitatie kunt doen, zoals houthakker, visser, mijnwerker).
+
+Niet toegestaan:
+
+•  Met het voertuig van je baan andere werkzaamheden uitvoeren (bijv. met de houthakkers-truck drugs rondbrengen).
+
+•  Met je eigen privevoertuig de werkzaamheden van je baan uitvoeren (bijv. hout hakken en vervoeren in je eigen sportauto).
+
+Waarom? Jobvoertuigen zijn herkenbaar en hebben vaak speciale eigenschappen (zoals extra bagageruimte). Door ze te gebruiken voor andere doeleinden verstoor je de balans en de roleplay.
+
+Straf: Categorie 1 (waarschuwing).
+
+Artikel 25: /report gebruik
+
+Wat houdt dit in? Het /report-commando is bedoeld om staff snel te attenderen op overtredingen die ter plekke aandacht nodig hebben.
+
+Vereisten: Reports moeten duidelijk verwoord zijn. Zeg niet "staff kom eens", maar "Report: speler X rijdt expres op spelers in (VDM) bij kruising Y". Wees zo volledig mogelijk: namen, locatie, wat er gebeurt.
+
+Geen report nodig voor: Voor RDM, metagaming en combatloggen maak je een ticket aan in de Utrecht Roleplay Support Discord. Deze overtredingen kunnen achteraf worden behandeld met bewijsmateriaal.
+
+Niet effectief (geen hulp):
+
+•  "staff kom eens"
+
+•  "staff ik heb een vraag"
+
+•  Alleen "rdm" of "vdm" typen zonder verdere uitleg
+
+Artikel 26-30: Criminele ActiviteitenArtikel 26: Spammen  Categorie 1
+
+Wat houdt dit in? Spammen is het herhaaldelijk versturen van dezelfde of overbodige berichten, waardoor andere spelers worden gehinderd.
+
+Voorbeelden:
+
+•  Meer dan 3 reports binnen 10 seconden versturen.
+
+•  Meer dan 3 reports binnen 1 minuut versturen.
+
+•  Continu dezelfde berichten herhalen in /me, /do, of /chat.
+
+Straf: Categorie 1 (waarschuwing).
+
+Artikel 27: Taal  Categorie 1
+
+Wat houdt dit in? In Utrecht Roleplay is Nederlands de voertaal. Je wordt geacht de Nederlandse taal te beheersen en toe te passen.
+
+•  Standaard Engels spreken is niet toegestaan. "Hi, how are you?" is dus niet de bedoeling als standaard begroeting.
+
+•  Binnen een bepaald karakter is Engels wel mogelijk, bijvoorbeeld als je een toerist speelt, een buitenlandse zakenman, of iemand die net uit het buitenland komt.
+
+•  Overleg met een stafflid als je een Engelstalig personage wilt spelen.
+
+Straf: Categorie 1 (waarschuwing).
+
+Artikel 28: Stemherkenning  Categorie 1
+
+Wat houdt dit in? Je mag iemand herkennen op basis van zijn of haar stem. Als je iemand vaak genoeg hebt horen praten, weet je wie het is, ook als je diegene niet ziet.
+
+Voice changer: Bij gebruik van een voice changer is het niet toegestaan om iemand te herkennen aan zijn stem. De voice changer verandert de stem juist om herkenning te voorkomen. Respecteer dat.
+
+Artikel 29: Birdy/Instapic media
+
+Wat houdt dit in? Informatie uit Birdy- of Instapic-berichten (inclusief foto's en video's) mag in de stad gebruikt worden alsof het openbare informatie is.
+
+Eigen verantwoordelijkheid: Het is je eigen verantwoordelijkheid wat je op sociale media plaatst. Post je een foto met een wapen? Dan mogen gangs en de politie die informatie gebruiken om je op te sporen. Post je een video van een drugslocatie? Dan mag iedereen die locatie kennen.
+
+Artikel 30: Criminele activiteiten  Categorie 2
+
+Wat houdt dit in? Dit artikel behandelt regels rondom criminele deals en overvallen.
+
+30.1 Illegale deals•  Voertuigen mogen niet bij illegale deals betrokken worden (dus geen drugs verkopen vanuit een auto, geen wapens overhandigen vanuit een rijdend voertuig).
+
+•  Onderwereld goederen dienen gekocht te worden met geld of andere onderwereld goederen (ruilhandel). Geen "ik geef je later geld" of betaling via derden.
+
+•  Onderwereld praktijken/voorwerpen aanbieden op Marktplaats (in-game) is niet toegestaan.
+
+30.2 Niet toegestaan te overvallen/oplichten•  Voertuigen: Je mag iemand niet dwingen zijn of haar autosleutel af te geven.
+
+•  Huis binnentreden: Je mag iemand niet onder dwang zijn huis binnenlaten en leegroven.
+
+Uitzondering: Als een speler zelf kiest om iemand binnen te laten (dus uit vrije wil, zonder wapendwang), dan is het betreden van het huis en eventuele diefstal eigen verantwoordelijkheid.
+
+Straf: Categorie 2 (ban 6-24 uur).
+
+Artikel 31-35: Groeperingen & GangwarsArtikel 31: Criminele groeperingen  Categorie 1
+
+Wat houdt dit in? Dit artikel regelt de samenwerking en limieten voor criminele groeperingen.
+
+31.1 Definitie•  Meer dan 5 personen in een scenario = criminele groepering. Dan zijn de onderwereldregels van toepassing.
+
+•  Bij 10 of meer leden in een groepering: de groepering moet in de ZV Discord aanwezig zijn (aanvragen via ticket) voor coordinatie en registratie.
+
+31.2 Criminele scenario'sOnder criminele scenario's vallen onder andere: jagen op andere gangs of overheidsdienaren, deelnemen aan onderwereld events, overvallen, massa-gijzelingen, achtervolgingen, en mengen met criminele zaken om een andere gang te ondersteunen.
+
+31.3 Samenwerking•  Groeperingen mogen alleen samenwerken in politie-scenario's en eigen klant-scenario's met niet-rivaliserende groeperingen.
+
+•  Samenwerken op het eiland is niet toegestaan, tenzij je toestemming hebt van een onderwereld coordinator.
+
+•  Samenwerken met andere groeperingen of solo-spelers tegen een specifieke persoon of groep is verboden ("ganging up").
+
+31.4 Wat telt als samenwerking?•  Telt niet: Een call maken naar een andere gang om te zeggen "ik zag iemand met een wapen lopen".
+
+Telt wel:
+
+•  Zelf achter dat wapen aan gaan (terwijl je samenwerkt met die andere gang).
+
+•  Het wapen beroven (rippen) samen met die andere gang.
+
+•  Meerijden met de andere gang in hun voertuigen.
+
+•  In een gezamenlijke portofoon zitten met een andere gang.
+
+Straf: Categorie 1 (waarschuwing of korte ban). Bij herhaling wordt de straf met een categorie verhoogd.
+
+Artikel 32: Oplichten en scammen  Categorie 1
+
+Wat houdt dit in? Dit artikel behandelt de regels rondom oplichting en scams binnen de server.
+
+32.1 Niet toegestaan•  Scammen met voertuigen: Je mag niet liegen over de staat, upgrades of eigendom van een voertuig bij verkoop.
+
+•  Doden na oplichting: Na het oplichten/scammen mag je de betreffende burger niet zomaar vermoorden. Uitzondering: als die persoon een grote mond heeft en blijft provoceren/bedreigen/callen, dan mag je hem/haar wel direct vermoorden zonder reden te benoemen.
+
+32.2 LimietenLimiet: Bovenwereld-gerelateerde scams hebben een limiet van 30.000 euro. Meer dan dat mag je niet oplichten in een scam.
+
+32.3 Eigen verantwoordelijkheid•  Bij aankoop van een voertuig: controleer zelf of de aangeboden upgrades kloppen. Vraag een proefrit, gebruik /request om info te krijgen.
+
+•  Uitlenen van bezittingen (geld, auto's, wapens) is volledig op eigen risico. Geen refund mogelijk, ook niet als de ander gebanned wordt.
+
+Artikel 33: Overvallen op winkels en banken  Categorie 2
+
+Wat houdt dit in? Dit artikel regelt alle regels rondom overvallen op winkels, banken en vergelijkbare locaties.
+
+33.1 Algemeen•  Er is geen maximum aan het aantal overvallers (maar houd het realistisch).
+
+•  Vrienden als gijzelaar is niet toegestaan. Gijzelaars moeten echte burgers zijn, niet je maatjes die meedoen.
+
+•  Een gijzelaar telt voor twee onderhandelingseisen. Heb je twee gijzelaars, dan mag je vier dingen eisen (in de regel).
+
+33.2 DSITijdens een gewone winkeloverval is er geen DSI (speciale eenheid) aanwezig. DSI komt alleen in actie als er automatische wapens (machinegeweren) in het spel zijn. Een Officier van Dienst (OvD) of leidinggevende mag hiervan afwijken als de situatie daarom vraagt.
+
+33.3 Counter-regelsBelangrijk: Overvallers mogen tot 1 uur na de overval niet gecounterd worden (inclusief het beroven van wapens en opbrengst). OV/massa-gijzeling mag ook niet gecounterd worden tot 1 uur erna.
+
+33.4 OnderhandelaarDe politie-onderhandelaar mag niet worden beschoten of gegijzeld tijdens een onderhandeling. Onderhandelingen zijn heilig.
+
+33.5 Binnen blijvenAlle personen die het gebouw van de overval zijn binnengegaan (zowel overvallers als gijzelaars) moeten binnen blijven totdat: de politie is aangekoppeld, OF 15 minuten zijn verstreken zonder dat er politie is gearriveerd. Uitzondering: Gijzelaars uitladen (naar buiten brengen) is toegestaan.
+
+33.6 Derde partij mengen•  Bij een gestarte overval en/of aanwezige politie: geen menging door een derde partij (ook niet bij een achtervolging die uit de overval ontstaat).
+
+•  Bij een gijzeling met politie op locatie: ook geen menging door derden.
+
+•  Uitzondering: Als je een foto of locatie deelt van de verzamelplaats van gijzelaars, mag er wel gemengd worden.
+
+•  Niet-gewapende betrokkenen (omstanders) moeten minimaal 300 meter afstand houden van de overvallocatie.
+
+33.7 OvervaltypesType
+
+Min. agenten
+
+Max. hostages
+
+Max. outside shooters
+
+Winkel
+
+4
+
+5
+
+2
+
+Kleine Bank
+
+6
+
+5
+
+3
+
+Juwelier
+
+6
+
+8
+
+4
+
+Jacht
+
+7
+
+8
+
+4
+
+Humane Labs
+
+8
+
+10
+
+4
+
+Grote Bank
+
+8
+
+10
+
+4
+
+33.8 Type toewijzingenDe volgende overvallen vallen onder type "Winkel": Stripclub, Tequilala, Apotheek, Politie Hoofdbureau stad, Carrental. De MazeBank Arena overval valt onder type "Grote Bank".
+
+33.9 BelangrijkTijdens een overval/gijzeling en de directe achtervolging (maximaal 10 minuten na vertrek van de locatie) gelden uitsluitend de regels van Artikel 33. Daarna gelden de algemene regels uit Artikel 6.1 (Powergamen).
+
+Artikel 34: Onderwereld Spelers  Categorie 2
+
+Wat houdt dit in? Dit artikel regelt de interactie met en tussen onderwereldspelers, inclusief rippen en witwassen.
+
+34.1 Rippen algemeenRippen (beroven van onderwereldspullen) is alleen toegestaan als de burger een illegale activiteit verricht of zich op het eiland bevindt.
+
+•  Je mag een burger niet doodschieten nadat je hem hebt geript.
+
+•  Je mag een burger niet zomaar doodschieten als hij geen bedreiging vormt (geen wapen bij zich heeft).
+
+•  In een publiekelijke loods (waar iedereen in kan): Je mag een burger eisen de loods te verlaten (met een wapen op zak). Je mag een burger doodsteken om de loodsinhoud toe te eigenen.
+
+•  Je mag niet scammen om een volwaardige loods, cold storage garage of importdocument, met uitzondering van sleuteltoegang.
+
+Toegestane rip-indicatoren:
+
+
+
+•  Gezichtsbedekking (een reguliere helm geldt niet, alleen als het hele gezicht bedekt is)
+
+•  Holster (met of zonder zichtbaar wapen)
+
+•  Illegale gesprekken (je hoort ze over drugs, wapens, etc.)
+
+•  Wapen in hand
+
+•  Zich bevinden op het eiland
+
+•  Zich bevinden in een publiekelijke loods
+
+•  Kogelvrij vest
+
+Beschermde situaties: Wanneer een burger net is ingespawned (binnen 2 minuten) mag hij niet geript worden, ongeacht of hij voldoet aan een rip-indicatie.
+
+Wat mag je afpakken?
+
+•  Al het zwarte geld dat de burger bij zich heeft.
+
+•  Alle wapens.
+
+•  Alle drugs (eindproduct, geen ingredienten).
+
+•  Alle communicatiemiddelen (portofoon, telefoon).
+
+•  Ingredienten om drugs te maken (legale producten zoals baking soda, bladeren) mogen NIET afgepakt worden.
+
+•  Repair kits mogen niet afgepakt worden.
+
+•  Als een burger bezig is met witwassen, mag je al het witgeld ook afpakken.
+
+34.2 Na het rippenNa het rippen mag je de persoon 2 uur niet vermoorden. Bij meerdere rippers: iedereen laat de persoon 2 uur met rust. Doodschieten omdat iemand niet kan betalen = RDM.
+
+Uitzondering: Als de persoon na het oplichten/scammen een grote mond heeft en blijft provoceren/bedreigen/callen, mag je hem/haar wel direct vermoorden zonder reden te benoemen.
+
+34.3 Dood is doodAls je dood bent gegaan (in elk scenario), mag je niet meer meedoen met een wraakactie. Ook geen inlichtingen verstrekken aan je matties. Dit geldt voor gangwars en hunt-sessies.
+
+34.4 HulpdienstenScammen van hulpdiensten die in dienst zijn (politie, ambulance, pechhulp) is niet toegestaan. Zij zijn er voor hun werk, niet om opgelicht te worden.
+
+34.5 Witwassers•  Overvallen (beroven) van witwassers is alleen toegestaan als je ziet dat iemand het voertuig uit de witwascirkel haalt of de witwashandeling uitvoert.
+
+•  Campen op spawnlocaties of witwaslocaties is niet toegestaan.
+
+•  Je mag al het zwarte geld rippen (of witgeld met bewijs van witwassen).
+
+•  Geldt ook voor rijdende voertuigen/convooi.
+
+•  Rippen van witwassers is toegestaan met 0 politie in dienst.
+
+34.6 Groeperingen•  Maximaal 20 leden per groepering (gang). Het omzeilen van deze limiet (bijv. twee gangs die samenwerken als een) leidt tot ontbinding van de gang.
+
+•  Nep meldingen maken bij ganghuizen om criminelen uit te lokken is verboden.
+
+Artikel 35: Gangwars  Categorie 2
+
+Wat houdt dit in? Dit artikel regelt de gangwars (wraakacties tussen gangs).
+
+35.1 StartenEen wraakactie (gangwar) mag alleen gestart worden met roleplay-bewijs van de moord op jouw ganglid. Een screenshot van het overlijdensbericht, een clip van de schietpartij, of een betrouwbare getuige.
+
+35.2 DuurBelangrijk: Gangwars duren maximaal 48 uur. Na die tijd vervallen alle redenen, ook nieuwe redenen die tijdens de war zijn ontstaan.
+
+35.3 SamenwerkingTijdens een officiele gangwar mogen externe personen of ally gangs (bevriende gangs) niet helpen, tenzij het conflict verder reikt dan een gang. Bijvoorbeeld: drie gangs tegen een gang mag niet, tenzij die ene gang ook bondgenoten heeft.
+
+35.4 Dood is dood•  Kills van de politie tellen ook mee (je gaat dood in hetzelfde scenario, dus je mag niet meer meedoen).
+
+•  Na de dood mag je niet meer meedoen tot de war over is.
+
+•  Verkeersongevallen en dodelijke ongelukken vallen hier ook onder.
+
+35.5 Onbewust doodgeschotenAls je onbewust voor een tweede keer wordt doodgeschoten omdat je op een bepaalde plek bent (bijv. je komt toevallig langs de war-zone), is dit op eigen risico. Bewust nog een keer iemand doodschieten die al uit de war is, valt onder Artikel 14 (RDM).
+
+35.6 Meer informatieZie de Gang-regels in de Utrecht Roleplay Onderwereld Discord voor aanvullende afspraken over hoe wars officieel geregistreerd worden.
+
+Straf: Categorie 2 (ban 6-24 uur).
+
+Artikel 36-40: Ontvoeren & GangregelsArtikel 36: Ontvoeren  Categorie 1
+
+Wat houdt dit in? Dit artikel regelt de regels rondom ontvoeringen.
+
+36.1 Politie vereistenOntvoering
+
+Min. politie in dienst
+
+Burger (geen agent)
+
+2
+
+1 agent
+
+4 (3 anderen moeten overblijven voor de stad)
+
+2 agenten
+
+8
+
+Uitzondering: Bij 7 of meer politie in totaal vervalt de agentenregel (dan mag het altijd, want er is genoeg capaciteit).
+
+36.2 Aspiranten•  Aspiranten (politie in opleiding) zijn verplicht hun Aspiranten-hesje te dragen (herkenbaar).
+
+•  Alleen agenten met de rang Aspirant mogen dit hesje dragen.
+
+•  Aspiranten mogen niet worden ontvoerd of gebruikt voor informatie/onderhandelingen. Ze zijn nog in opleiding en worden beschouwd als "off limits".
+
+36.3 Duur en bedragenRegel
+
+Limiet
+
+Maximale ontvoeringstijd
+
+90 minuten
+
+Maximale eis per burger
+
+30.000 euro
+
+Maximale eis per agent
+
+50.000 euro
+
+Maximaal totaal dat politie mag geven (uit overheidskas)
+
+500.000 euro
+
+Artikel 37: Onder dreiging houden  Categorie 3
+
+Wat houdt dit in? Het is uitsluitend toegestaan om een burger onder dreiging te houden (fouilleren, overmeesteren, ontvoeren) als aan minimaal een van de volgende voorwaarden is voldaan:
+
+37.1 Zichtbare criminele attributen
+
+•  Holster (met of zonder zichtbaar wapen)
+
+•  Masker, bivakmuts of vergelijkbare gezichtsbedekking
+
+•  Kogelwerend vest of tactische uitrusting (plate carrier, tactische riem)
+
+37.2 Betrokkenheid bij criminele activiteiten•  Handel in of bezit van drugs, wapens of illegale goederen (je hebt het gezien of gehoord).
+
+•  Zichtbare betrokkenheid bij een illegaal scenario (ripactie, deal, overval).
+
+37.3 Ontvoeringsscenario•  De burger realistisch onder controle wordt gehouden met een zichtbaar gericht wapen (dus niet van 50 meter afstand met een pistool).
+
+•  De ontvoering past binnen een breder RP-scenario (wraak, gijzeling, afpersing).
+
+•  Er geen sprake is van willekeurige ontvoeringen zonder IC-aanleiding.
+
+37.4 Overig•  Onnodig wapens richten zonder reden = Powergamen of FailRP.
+
+•  Deze regels gelden op land, water en in de lucht.
+
+Eiland: Op het eiland geldt Artikel 9.1 (NVOL) niet - op het eiland gelden andere, hardere regels.
+
+Straf: Categorie 3 (ban 24-72 uur).
+
+Artikel 38: Leden criminele organisaties
+
+Wat houdt dit in? Dit artikel regelt het maximum aantal leden per criminele organisatie.
+
+•  Maximaal 20 leden per criminele organisatie (zowel erkende als niet-erkende gangs).
+
+•  Vanaf 10 leden is de organisatie verplicht aanwezig te zijn in de Utrecht Roleplay Discord (aanvragen via ticket voor een eigen kanaal).
+
+Overtreding: Overtreding van de maximumgrootte leidt tot een gang-waarschuwing. Bij herhaling kan de gang ontbonden worden.
+
+Artikel 39: Rippen van wapens  Categorie 1
+
+Wat houdt dit in? Dit artikel regelt de regels rondom het rippen (afpakken) van wapens.
+
+39.1 Algemeen•  Rippen (iemand zijn wapen afpakken) mag met elk soort wapen (pistool, mes, geweer).
+
+•  Het wapen moet fysiek gezien zijn (je ziet het in zijn hand, in zijn holster, of op zijn rug).
+
+Verplicht: Je bent verplicht te clippen (opnemen) vanaf het moment dat je het wapen ziet tot aan het moment dat je het ript. Dit is je bewijs.
+
+39.2 Uitzonderingen (geen fysiek zien nodig)
+
+•  Rippen op het eiland (daar gelden speciale regels).
+
+•  Bij gezichtsbedekkende kleding (masker, bivakmuts), kogelwerend vest of holster.
+
+•  Als je zelf of je groep aangeeft een wapen te hebben (bijv. "Ik heb een wapen!"). Dan is het je eigen verantwoordelijkheid.
+
+•  Wapens in de kofferbak (als je ziet dat iemand iets in de kofferbak stopt of haalt).
+
+39.3 TijdslimietBelangrijk: Na het zien van een wapen/holster/vest/masker heb je maximaal 2 uur om te rippen. Daarna is de rip ongeldig en kun je er geen gebruik meer van maken.
+
+39.4 Maskers en helmen•  Helm op een motor = geen masker. Het vizier kan omlaag, maar dat telt niet als gezichtsbedekking voor rippen.
+
+•  Afstappen van de motor = wel masker (als het vizier omlaag is, telt het dan wel). Eigen verantwoordelijkheid.
+
+•  Valse baard/snor = geen masker, ook al staat het in het kledingmenu onder 'masker'.
+
+39.5 Niet toegestaan•  Iemand forceren zijn/haar grote tas af te doen om te checken of er een rugwapen in zit. Dat is powergaming.
+
+•  Discord-kanalen gebruiken als bewijs van "gezien" (behalve Birdy/Instapic media; die zijn in-game).
+
+39.6 AttachmentsAttachments (vizieren, grips, silencers, zaklampen) mogen geript worden als je ze ziet op een wapen dat je ziet, op de rug van iemand (het wapen is zichtbaar), of los tijdens een fouillering. Attachments op niet-geziene wapens (bijv. een wapen in een broekzak) mogen niet geript worden.
+
+Artikel 40: Officiele gangs  Categorie 5 + Gang-warn
+
+Wat houdt dit in? Dit artikel regelt de regels voor officiele gangs.
+
+40.1 Gang-menu•  Misbruiken van het gang-menu (bijv. oneindig items halen, foute permissions geven) is niet toegestaan.
+
+•  Personen uit een auto halen mag alleen als die persoon geboeid is door de gang.
+
+•  Items innemen via /me is niet toegestaan. Gebruik het F6-menu voor alle acties.
+
+40.2 Niet toegestaan•  Meermaals foutief spullen innemen (bijv. per ongeluk items afpakken en niet teruggeven). Dit leidt tot een gang-waarschuwing.
+
+•  Een tweede gang creeeren om "grootte" te maken voor eigen gewin (dus 2 gangs van 10 leden die stiekem samenwerken).
+
+40.3 Verplichtingen (voor officiele gangs)•  Maximaal 90 minuten ontvoeren (alleen tijdens overvallen/ontvoeringen).
+
+Belangrijk: Minstens 1x per week een uitgebreid RP-scenario uitvoeren (geen stand-alone combat, maar een verhaal). Scenario posten in #scenario-gangnaam in de Onderwereld Discord. Bij uitzonderlijke gevallen (vakantie, drukte) mag een extra week worden gegeven na overleg met de Onderwereld Coordinator.
+
+Straf: Categorie 5 (ban 7-14 dagen) + gang-waarschuwing.
+
+Artikel 41-45: Wraak & HulpdienstenArtikel 41: Erkende gangs  Categorie 5 + Gang-warn
+
+Wat houdt dit in? Dit artikel regelt de regels voor erkende gangs.
+
+•  Maximaal 90 minuten ontvoeren (alleen tijdens overvallen/ontvoeringen).
+
+•  Items innemen via /me is niet toegestaan. Gebruik het F6-menu.
+
+•  Scammen van eigen gangleden is niet toegestaan. Alleen officiele gangs mogen intern scammen (en dan nog met mate).
+
+Verplichtingen: Minstens 1x per week een RP-scenario uitvoeren (minder strikt dan officiele gangs, maar nog steeds verplicht). Scenario posten in #scenario-gangnaam in de OW Discord. Bij uitzonderlijke gevallen: extra week mogelijk na overleg met Onderwereld Coordinator.
+
+Straf: Categorie 5 (ban 7-14 dagen) + gang-waarschuwing.
+
+Artikel 42: Wraakacties  Categorie 4-5
+
+Wat houdt dit in? Dit artikel regelt wraakacties tegen whitelisted jobs en andere gangs.
+
+42.1 Tegen whitelisted jobs (Categorie 5)•  Wraakacties tegen whitelisted jobs (ambulance, pechhulp, overheidsbanen waarvoor je moet solliciteren) zijn te allen tijde verboden. Deze spelers doen hun werk, ze zijn geen partij in criminele conflicten.
+
+42.2 Tegen andere gangs (Categorie 4)•  Na overlijden in een scenario (bijv. gangwar, shootout) is het verboden om weer te mengen in dat scenario. Dood is dood (zie ook Artikel 35.4).
+
+Artikel 43: Fouilleren  Categorie 2
+
+Wat houdt dit in? Dit artikel regelt de regels rondom fouilleren.
+
+43.1 Vereisten•  Je kunt alleen fouilleren als je een wapen hebt (getrokken en gericht).
+
+•  Het wapen moet visueel gezien zijn (je ziet het in de hand van de verdachte, of de verdachte draagt een holster/vest/masker). Zie ook Artikel 39 voor uitzonderingen.
+
+43.2 Niet toegestaan•  Kennis hebben van illegale spullen zonder dat de persoon criminele kleding draagt. Je kunt niet zeggen "ik weet dat jij drugs hebt" als je niks hebt gezien.
+
+•  Na het fouilleren iemand verplichten om zijn/haar tas af te doen (dat valt onder dwang en is niet toegestaan).
+
+Straf: Categorie 2 (ban 6-24 uur).
+
+Artikel 44: Ambulance  Categorie 2
+
+Wat houdt dit in? Dit artikel regelt de regels rondom de ambulance en medische hulp.
+
+44.1 Algemeen•  Ambulancemedewerkers vermoorden, beledigen of niet meewerken is niet toegestaan. Zij zijn er om te helpen, ook al ben je een crimineel.
+
+•  Meldingen naar de ambulance moeten realistisch en uitgebreid zijn.
+
+•  Roleplay moet realistisch zijn. Wees eerlijk over je verwondingen.
+
+•  Ambulanciers mogen niet geforceerd worden om te reviven. Zij beslissen of het realistisch is.
+
+•  Ambulancemedewerkers mogen je dood verklaren als dat realistisch is (bijv. een kogel door het hoofd).
+
+44.2 Geen revive toegestaan bij
+
+•  Kogelwond in het hoofd (doorboorde schedel = onmiddellijke dood).
+
+•  Langer dan 5 minuten onder water gelegen (verdrinking).
+
+•  Val vanaf 5 verdiepingen of hoger (dodelijke hoogte).
+
+•  De persoon geeft zelf aan dood te zijn door RDM/VDM/FailRP/bugs (maak dan een ticket, geen revive).
+
+44.3 Corruptie•  Samenwerken met de onderwereld (bijv. neprevives, informanten spelen voor gangs) is niet toegestaan.
+
+•  Betaald krijgen om te reviven is niet toegestaan. Ambulance is een onpartijdige hulpdienst.
+
+Straf: Categorie 2 (ban 6-24 uur).
+
+Artikel 45: Pechhulp  Categorie 2
+
+Wat houdt dit in? Dit artikel regelt de regels rondom de pechhulp.
+
+•  Pechhulpmedewerkers vermoorden, beledigen of niet meewerken is niet toegestaan.
+
+•  Meldingen moeten realistisch en uitgebreid zijn (wat is er met je voertuig gebeurd, waar sta je, welke kleur heeft je auto).
+
+Belangrijk: Pechhulp is er om voertuigen te repareren en te bergen, niet om betrokken te raken bij criminele scenario's.
+
+Straf: Categorie 2 (ban 6-24 uur).
+
+Artikel 46-50: Streamers & AlgemeenArtikel 46: Streamers en content creators  Categorie 6
+
+Wat houdt dit in? Dit artikel regelt de regels voor streamers en content creators op de server.
+
+46.1 Verplichtingen•  Zorg dat mensen in je Discord (of andere chatkanalen) weten dat je streamt, zodat ze niet per ongeluk metagamen.
+
+•  "Utrecht Roleplay" moet in de streamtitel staan. Dit is ter promotie en herkenning.
+
+•  Je bent een visitekaartje voor Utrecht Roleplay. Meld problemen via een ticket, niet publiekelijk op stream.
+
+46.2 Directe strafFailRP, RDM, VDM die on-stream gebeuren, wordt direct bestraft (vaak strenger dan normaal, omdat het op beeld staat).
+
+46.3 Problemen bij andere streamersAls je problemen ziet bij een andere streamer (bijv. een hacker of toxisch gedrag), spreek dan een stafflid aan of maak een ticket. Reageer niet luidruchtig in de chat van die streamer.
+
+46.4 Ban (Categorie 6)•  Utrecht Roleplay in kwaad daglicht zetten (bijv. onterecht beschuldigen van corruptie, liegen over de server) leidt tot een ban.
+
+•  Samenwerken met hackers of het niet melden dat er een hacker in je stream zit, valt ook onder deze categorie. Je hebt een voorbeeldfunctie.
+
+Straf: Categorie 6 (ban 14-30 dagen).
+
+Artikel 47: Erotische roleplay  Categorie 5
+
+Wat houdt dit in? Erotische roleplay (seksuele handelingen, expliciete beschrijvingen, "cyberseks") is niet toegestaan in Utrecht Roleplay. Dit is een server voor algemene roleplay, geen 18+ platform.
+
+Uitzondering: Een stafflid kan een uitzondering maken voor specifieke situaties, zoals dansen in een stripclub (zonder expliciete handelingen).
+
+Straf: Categorie 5 (ban 7-14 dagen).
+
+Artikel 48: AFK kick voorkomen  Categorie 3
+
+Wat houdt dit in? De server heeft een automatische kick voor spelers die te lang AFK (Away From Keyboard) zijn. Het omzeilen van deze kick is verboden.
+
+Voorbeelden:
+
+•  Je gebruikt een script of een gewicht op je toetsenbord om te blijven lopen.
+
+•  Je gaat "ghosten" (weg van je toetsenbord) terwijl je een bovenwereldse baan hebt, zodat je toch loon ontvangt zonder iets te doen.
+
+•  Je gaat in een hoekje staan met een emote die je niet AFK laat lijken.
+
+Een stafflid beslist of iets onder AFK-kick voorkomen valt.
+
+Straf: Categorie 3 (ban 24-72 uur).
+
+Artikel 49: Algemene regels hulpdiensten  Categorie 6
+
+Wat houdt dit in? Dit artikel regelt de algemene regels voor alle hulpdiensten.
+
+49.1 Gedrag naar hulpdiensten•  Agressief benaderen van Politie, Ambulance, Taxi en Pechhulp is niet toegestaan.
+
+•  Blijf te allen tijde vriendelijk en cooperatief in de omgang met hulpdiensten. Ook als je wordt gearresteerd.
+
+49.2 Verplichtingen hulpdiensten•  Portofoon gebruiken tijdens een overheidsbaan is verplicht. Je moet bereikbaar zijn voor collega's.
+
+•  Onnodig veel boetes geven is niet de bedoeling. Als een agent misbruik maakt van zijn bevoegdheden, maak dan een report of ticket.
+
+49.3 Niet toegestaan (Categorie 6)•  Corrupt zijn (informatie lekken, samenwerken met criminelen tegen de overheid) = direct ontslag + straf.
+
+•  Criminele activiteiten uitvoeren (in of uit dienst). Een politieagent in burger die drugs dealt is nog steeds corrupt.
+
+•  Collega's via Discord oproepen bij overval = metagaming (gebruik de in-game porto of telefoon).
+
+49.4 Documenten lekken (Categorie 4)•  Het lekken van documenten of informatie die je hebt verkregen in je dienst (of zelfs na ontslag) is niet toegestaan. Dit geldt ook voor informatie over lopende onderzoeken.
+
+Straf: Categorie 4-6 (ban 24-72 uur tot 14-30 dagen).
+
+Artikel 50: Weggeven van goederen bij stoppen  Categorie 8
+
+Wat houdt dit in? Wanneer een speler aangeeft te stoppen met Utrecht Roleplay (of gebanned wordt), is het niet toegestaan om zijn of haar goederen (geld, items, voertuigen, huizen) over te dragen aan andere spelers.
+
+Waarom? De servereconomie moet gezond blijven en niet worden verstoord door "erfenissen".
+
+Straf: Categorie 8 (permanente ban voor zowel de gever als de ontvanger).
+
+Artikel 51-55: Toxiciteit & StaffArtikel 51: Toxic gedrag  Categorie 4-5
+
+Wat houdt dit in? Toxic gedrag is elk gedrag dat bedoeld is om andere spelers te kwetsen, te frustreren of hun speelplezier te verminderen.
+
+51.1 In de stad (Categorie 4)
+
+•  Respectloze reacties onder doodverklaringen (bijv. "L", "Daggoe", "Sukkel", spottende emoji's).
+
+•  Schreeuwen/schelden na verloren scenario's (je hebt verloren, accepteer het).
+
+•  Spelers pesten, targeten (steeds dezelfde persoon lastigvallen) of structureel lastigvallen.
+
+•  Nieuwe spelers uitlachen of misleiden (bijv. valse informatie geven waardoor ze in de problemen komen).
+
+51.2 In Discord (Categorie 5)
+
+•  Beledigen van spelers, gangs of groepen in de openbare kanalen.
+
+•  Publiekelijk klagen over straffen (gebruik daarvoor het ticketsysteem).
+
+•  Flame wars (ruziemaken) starten of provoceren.
+
+51.3 Ticketmisbruik (Categorie 4)
+
+•  Tickets aanmaken zonder bewijs of uit wraak (om iemand dwars te zitten).
+
+•  Situaties overdrijven of verdraaien om een ander in problemen te brengen.
+
+•  Meerdere tickets aanmaken over zaken die al zijn afgehandeld.
+
+51.4 Wel toegestaan•  In-character beledigingen (zolang het niet persoonlijk wordt richting de speler achter het personage).
+
+•  Competitief gedrag en trots op gewonnen scenario's (maar zonder disrespect).
+
+•  Constructieve kritiek via de juiste kanalen (tickets of feedbackkanalen).
+
+51.5 StrafverzwaringBij herhaling van toxic gedrag kan een stafflid een hogere strafcategorie opleggen. Bij extreem gedrag (racisme, doxing, bedreigingen) kan direct een zwaardere straf worden gegeven (Categorie 6 of hoger).
+
+51.6 Belangrijk•  Altijd bewijs (clips, screenshots) bij reports over toxic gedrag.
+
+•  "Het was maar een grapje" is geen excuus als de ontvanger zich gekwetst voelt.
+
+•  Je bent te allen tijde verantwoordelijk voor je eigen gedrag, ook als je boos of gefrustreerd bent.
+
+Onthoud: Achter elk karakter zit een echt persoon met gevoelens.
+
+Straf: Categorie 4-5 (ban 24-72 uur tot 7-14 dagen).
+
+Artikel 52: Stelen van overheidsvoertuigen  Categorie 1
+
+Wat houdt dit in? Overheidsvoertuigen zijn voertuigen van Politie, Ambulance en Pechhulp.
+
+52.1 Toegestaan•  Stelen van een overheidsvoertuig tijdens een achtervolging om te ontsnappen. Bijv. een agent stapt uit, jij springt erin en rijdt weg.
+
+52.2 Niet toegestaan•  Zonder reden een overheidsvoertuig stelen (bijv. "voor de lol").
+
+•  Bulletproof auto's (pantservoertuigen van politie of DSI) stelen. Deze zijn off-limits.
+
+•  Stelen zonder een wapen op zak (je moet een bedreiging kunnen vormen).
+
+Straf: Categorie 1 (waarschuwing).
+
+Artikel 53: Staff  Categorie 5-6
+
+Wat houdt dit in? Dit artikel regelt de omgang met en het gedrag richting staffleden.
+
+53.1 Liegen tegen staff (Categorie 5)•  Liegen tegen een stafflid tijdens een onderzoek of gesprek is niet toegestaan. Wees eerlijk; fouten maken mag, maar liegen niet.
+
+53.2 Informatie achterhouden (Categorie 5)Je moet naar waarheid informatie verstrekken als een stafflid erom vraagt. Je bent niet verplicht om informatie te geven waar niet om gevraagd wordt, maar op een directe vraag geef je een eerlijk antwoord.
+
+53.3 Voordoen als staff (Categorie 6)•  Jezelf voordoen als stafflid (bijv. zeggen dat je een ban kunt uitdelen, staff-kleuren gebruiken in chat, een staff-achternaam gebruiken) is niet toegestaan.
+
+53.4 Voordoen als speler (Categorie 2)•  Het gebruiken van de naam van een andere speler in je Steamnaam (of andere identificatie) met de intentie om je voor te doen als diegene, is verboden.
+
+Straf: Categorie 2-6 (ban 6-24 uur tot 14-30 dagen).
+
+Artikel 56-62: Eiland & APVArtikel 54: Rippen op eiland  Categorie 2
+
+Wat houdt dit in? Op het eiland (Cayo Perico) gelden soepelere regels voor rippen. Je mag vrijwel alles afpakken en mag ook doden na het rippen. Zie ook Artikel 34 voor details over rippen op het eiland.
+
+Straf: Categorie 2 (ban 6-24 uur) - basisovertreding voor kleine eiland-gerelateerde overtredingen.
+
+Artikel 55: Politie op eiland  Categorie 2
+
+Wat houdt dit in? Politie mag op het eiland optreden volgens de standaardprocedures, maar houd rekening met de beperkte middelen. De eilandregels zijn strenger voor criminelen, maar politie moet zich nog steeds aan de NVOL- en FailRP-regels houden.
+
+Straf: Categorie 2 (ban 6-24 uur).
+
+Artikel 56: Samenwerking op eiland  Categorie 2
+
+Wat houdt dit in? Samenwerken met andere groeperingen op het eiland is niet toegestaan zonder toestemming van een onderwereld coordinator. Het eiland is bedoeld als een uitdaging, niet als een plek om met drie gangs een iemand te overmeesteren.
+
+Straf: Categorie 2 (ban 6-24 uur).
+
+Artikel 57: Vliegtuig/Helikopter gebruik  Categorie 4
+
+Wat houdt dit in? Dit artikel regelt het gebruik van vliegtuigen en helikopters.
+
+57.1 VereistenBelangrijk: Een vliegbrevet is verplicht voor het besturen van vliegtuigen en helikopters (Categorie 4 bij overtreding). Houd je aan de regels van de vliegschool. Vorderingen van de overheid (politie, handhaving) moet je gehoorzamen. Drie keer negeren = je wordt gezocht.
+
+57.2 Bij beschoten wordenAls je beschoten wordt in de lucht, koppel je af, land je en check je of er schade is. Ben je niet geraakt, dan mag je weer aankoppelen en verder vliegen.
+
+57.3 Springen (parachute)•  Passagiers: mogen te allen tijde springen met een parachute.
+
+•  Bestuurder: mag alleen springen bij neerstorten (het vliegtuig/de helikopter is oncontroleerbaar).
+
+57.4 Niet toegestaan•  Gevangenisuitbraak met heli/vliegtuig is niet toegestaan (Categorie 4). Gebruik daarvoor andere middelen.
+
+Straf: Categorie 4 (ban 3-7 dagen).
+
+Artikel 58: Vliegdekschip  Categorie 2
+
+Wat houdt dit in? Het vliegdekschip (Aircraft Carrier) is militair en justitieel gebied.
+
+•  Betreden is op eigen risico.
+
+•  Stedelijke regels (APV, algemene regels) gelden ook op het schip.
+
+•  Politie mag in uiterste situaties dodelijk vuur gebruiken op het schip.
+
+•  Landen of hangen rondom de carrier is eigen risico (je kunt worden neergeschoten).
+
+Straf: Categorie 2 (ban 6-24 uur).
+
+Artikel 59: Helikopter op eiland
+
+Wat houdt dit in? Specifieke regels voor helikopters op het eiland.
+
+•  Helikopters uit de lucht schieten op het eiland is toegestaan (normaal gesproken niet op het vasteland).
+
+•  Springen met een parachute vanaf de heli is toegestaan.
+
+•  De bestuurder mag alleen springen bij neerstorten (zie Artikel 57).
+
+Artikel 60: Staff limiet
+
+Wat houdt dit in? Maximaal 3 leden van elke gang mogen in het staffteam zitten. Dit is ter voorkoming van "staffgangs": situaties waarin een gang onevenredig veel invloed heeft binnen het team dat ook sancties oplegt.
+
+Artikel 61: Combat Gedrag  Categorie 7
+
+Wat houdt dit in? Wanneer wij merken dat je puur voor de combat op de server bent (d.w.z. je zoekt alleen gevechten op, je hebt geen interesse in roleplay, je negeert verhaallijnen), zal je een ban ontvangen volgens bovenstaande categorie. Deze ban wordt besproken en uitgedeeld door hoger staff (admin of hoger).
+
+Straf: Categorie 7 (ban 30 dagen).
+
+Artikel 62: Haat veroorzakend / Toxic gedrag  Categorie 5
+
+Wat houdt dit in? Dit artikel regelt het verbod op haat veroorzakend en toxic gedrag.
+
+62.1 In-game•  Het toxic reageren op doodverklaringen in Twitter (in-game) valt onder haat veroorzakend gedrag. Voorbeeld: "L" in Twitter plaatsen nadat iemand is doodverklaard.
+
+•  Het in een scenario toxic reageren omdat je het ergens niet mee eens bent (bijv. "jullie zijn allemaal noobs", "staff is corrupt") is niet toegestaan.
+
+62.2 Tickets/klachten•  Tickets of klachten maken over een persoon of groepering zonder goed gegronde reden wordt gezien als "naaien" (iemand expres dwarszitten) en zal worden bestraft.
+
+62.3 In Discord (Categorie 5)•  Het toxic reageren op algemene zaken naar de bovenwereld of onderwereld wordt niet meer getolereerd. Discussies voeren mag, maar er vindt momenteel te veel vervelend gedrag naar elkaar plaats.
+
+•  Het toxic reageren in Discord, in elk kanaal (ook in #algemeen, #memes, etc.), zal worden bestraft met Categorie 5.
+
+Belangrijk: Indien je het niet eens bent met een verkregen straf, is het onnodig om in de algemene Discord het stafflid belachelijk te maken of een discussie te beginnen. Hiervoor hebben we ons ticketsysteem.
+
+--- Einde van de Utrecht Roleplay-regels ---
+
+Bij vragen of onduidelijkheden kun je altijd een ticket aanmaken in onze Support Discord.
+
+Onthoud: gezond verstand gaat boven alle regels - roleplay draait om samen plezier hebben.
+
+
+
+ALGEMENE REGELS
+
+62 Artikelen
+
+Utrecht Roleplay
+
+Bij vragen: ticket aanmaken in onze Discord
+
+© 2026 Utrecht Roleplay -
