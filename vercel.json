@@ -8,6 +8,9 @@
     },
     "api/discord-status.js": {
       "includeFiles": "data/**"
+    },
+    "api/servers.js": {
+      "includeFiles": "data/**"
     }
   },
   "rewrites": [
@@ -19,7 +22,7 @@
   "crons": [
     {
       "path": "/api/discord-status",
-      "schedule": "*/5 * * * *"
+      "schedule": "0 8 * * *"
     }
   ]
 }

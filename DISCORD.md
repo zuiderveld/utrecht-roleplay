@@ -79,7 +79,15 @@ Werkt betrouwbaar met **`BLOB_READ_WRITE_TOKEN`**. Zonder Blob onthoudt Vercel t
 
 ## Automatisch (cron)
 
-Elke 5 min: `/api/discord-status` (Vercel stuurt `Authorization: Bearer` + `CRON_SECRET` mee).
+**Vercel Hobby:** maximaal **1× per dag**. In `vercel.json` staat `0 8 * * *` (08:00 UTC).
+
+Voor **elke 5 minuten** op Hobby: gebruik een externe cron (bijv. [cron-job.org](https://cron-job.org)) die aanroept:
+
+`GET https://www.utrechtroleplay.eu/api/discord-status?secret=JOUW_CRON_SECRET`
+
+Of upgrade naar **Vercel Pro** en zet in `vercel.json` weer `*/5 * * * *`.
+
+Met Vercel Cron (Pro of dagelijks op Hobby): `/api/discord-status` — Vercel stuurt `Authorization: Bearer` + `CRON_SECRET` mee.
 
 **Problemen?**
 
