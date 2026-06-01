@@ -28,6 +28,16 @@
       "fallbackPath": "/",
       "link": "https://staff.utrechtroleplay.eu/",
       "icon": "shield"
+    },
+    {
+      "id": "store",
+      "name": "Store",
+      "description": "Coin store",
+      "url": "https://store.utrechtroleplay.eu",
+      "checkPath": "/api/health",
+      "fallbackPath": "/",
+      "link": "https://store.utrechtroleplay.eu/",
+      "icon": "cart"
     }
   ]
 }

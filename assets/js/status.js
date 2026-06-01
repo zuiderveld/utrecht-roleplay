@@ -94,6 +94,7 @@
     function icon(name) {
         if (name === 'landmark') return 'fa-landmark';
         if (name === 'shield') return 'fa-shield-halved';
+        if (name === 'cart') return 'fa-cart-shopping';
         return 'fa-globe';
     }
 

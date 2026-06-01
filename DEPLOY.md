@@ -29,30 +29,18 @@ Geen `node_modules` uploaden (staat in `.gitignore`).
 
 | Naam | Waarde |
 |------|--------|
-| `GRP_BRIDGE_API_KEY` | Zelfde als `js/config.js` en FiveM `config.lua` |
-| `DISCORD_BOT_TOKEN` | (optioneel) Discord bot token |
-| `DISCORD_GUILD_ID` | (optioneel) Server ID |
-| `DISCORD_ROLE_INGAME_BUYER` | (optioneel) |
-| `DISCORD_ROLE_REVIVEMIJ` | (optioneel) |
+| `DISCORD_STATUS_WEBHOOK_URL` | Status embed (zie DISCORD.md) |
+| `CRON_SECRET` | Cron voor discord-status |
 
 6. Deploy
 
-Test bridge: `https://jouw-site.vercel.app/api/health` → moet `{"ok":true}` tonen.
+Store health: `https://store.utrechtroleplay.eu/api/health` (apart project).
 
 ---
 
-## FiveM server (`ehrp_store`)
+## Store (apart project)
 
-```lua
-Config.WebsiteBridge = {
-    enabled = true,
-    apiUrl = "https://www.utrechtroleplay.eu",  -- jouw live domein (zonder /api)
-    apiKey = "grp-bridge-change-me",
-    syncIntervalSeconds = 15,
-}
-```
-
-Herstart `ehrp_store`.
+De coin store staat in **`../utrecht-store`** — eigen Vercel-project en domein (bijv. `store.utrechtroleplay.eu`). Zie `utrecht-store/DEPLOY.md` en FiveM resource `utrp_store`.
 
 ---
 
