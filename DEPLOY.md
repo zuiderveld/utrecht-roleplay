@@ -19,8 +19,12 @@ Geen `node_modules` uploaden (staat in `.gitignore`).
 
 1. [vercel.com](https://vercel.com) → **Add New Project** → import GitHub repo
 2. **Framework:** Other (geen build framework)
-3. **Build Command:** `cd api && npm install` (staat ook in `vercel.json`)
-4. **Output Directory:** `.` (root — HTML/JS/CSS)
+3. **Root Directory:** leeg (niet `api`)
+4. **Install Command:** `npm install` (of leeg — `vercel.json` regelt dit)
+5. **Build Command:** leeg
+6. **Output Directory:** `.` (root — HTML/JS/CSS)
+
+> **Fout `api/package.json ENOENT`?** In Vercel staat vaak nog `cd api && npm install` of Root Directory = `api`. Zet Root Directory leeg en Install Command op `npm install`, daarna redeploy.
 5. **Environment Variables** (Settings → Environment Variables):
 
 | Naam | Waarde |
