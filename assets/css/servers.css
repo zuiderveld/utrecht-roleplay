@@ -286,6 +286,67 @@
     color: #9ca3af;
 }
 
+.cfx-select {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
+}
+
+.cfx-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cfx-page-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(244, 5, 82, 0.15);
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.cfx-page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.cfx-server.featured {
+    border-color: rgba(244, 5, 82, 0.45);
+}
+
+.cfx-tag.featured {
+    background: rgba(244, 5, 82, 0.35);
+    color: #fff;
+}
+
+.cfx-icon-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #6b7280;
+    font-size: 1.25rem;
+}
+
+.cfx-server-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
 @media (max-width: 900px) {
     .cfx-layout {
         grid-template-columns: 1fr;

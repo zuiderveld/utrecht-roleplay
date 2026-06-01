@@ -42,10 +42,20 @@
                 <input type="search" id="serverSearch" class="cfx-search" placeholder="Zoek servers…" autocomplete="off">
             </div>
 
+            <h2>Land</h2>
+            <select id="localeFilter" class="cfx-select">
+                <option value="">Alle landen</option>
+                <option value="NL">Nederland</option>
+                <option value="BE">België</option>
+                <option value="DE">Duitsland</option>
+                <option value="GB">Verenigd Koninkrijk</option>
+                <option value="US">Verenigde Staten</option>
+            </select>
+
             <h2>Filters</h2>
             <div class="cfx-filter-group">
-                <label><input type="checkbox" class="cfx-filter-tag" value="roleplay" checked> Roleplay</label>
-                <label><input type="checkbox" class="cfx-filter-tag" value="nl" checked> Nederlands</label>
+                <label><input type="checkbox" class="cfx-filter-tag" value="roleplay"> Roleplay</label>
+                <label><input type="checkbox" class="cfx-filter-tag" value="nl"> Nederlands (tags)</label>
                 <label><input type="checkbox" class="cfx-filter-tag" value="esx"> ESX</label>
                 <label><input type="checkbox" class="cfx-filter-tag" value="realism"> Realism</label>
             </div>
@@ -54,9 +64,9 @@
             </div>
 
             <p class="cfx-sidebar-note">
-                Layout geïnspireerd op de
-                <a href="https://servers.fivem.net/" target="_blank" rel="noopener">officiële FiveM serverlijst</a>.
-                Hier zie je onze URP-server met live spelers.
+                Zelfde bron als de
+                <a href="https://servers.fivem.net/" target="_blank" rel="noopener">officiële FiveM serverlijst</a>
+                (Cfx stream). Utrecht Roleplay staat bovenaan op pagina 1.
             </p>
         </aside>
 
@@ -71,6 +81,7 @@
             <div id="serverList" class="cfx-server-list">
                 <div class="cfx-empty"><i class="fas fa-spinner fa-spin"></i> Servers laden…</div>
             </div>
+            <div id="serverPagination" class="cfx-pagination"></div>
             <p class="cfx-powered">
                 Utrecht Roleplay · <a href="https://www.cfx.re/" target="_blank" rel="noopener">Cfx.re</a> / FiveM
             </p>
@@ -80,6 +91,6 @@
 
 <footer class="footer">© 2026 Utrecht Roleplay — Alle rechten voorbehouden</footer>
 
-<script src="assets/js/servers.js?v=2"></script>
+<script src="assets/js/servers.js?v=3"></script>
 </body>
 </html>

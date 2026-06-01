@@ -11,6 +11,9 @@
     },
     "api/servers.js": {
       "includeFiles": "data/**"
+    },
+    "api/cfx-servers.js": {
+      "maxDuration": 60
     }
   },
   "rewrites": [
