@@ -20,6 +20,18 @@ import {
   readRedeemPackages,
   annotateCatalogWithRedeem,
 } from "./lib/tebexwrapper.mjs";
+import {
+  readRoleGrants,
+  writeRoleGrants,
+  upsertPackageRoleGrant,
+  syncRoleGrantsToTebexwrapper,
+  grantDiscordRoles,
+  roleIdsForPackages,
+  markRolesClaimed,
+  alreadyClaimed,
+  getDiscordBotToken,
+  getDiscordGuildIdForRoles,
+} from "./lib/discord-roles.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA =
@@ -32,7 +44,13 @@ function ensureDataFiles() {
   if (process.env.VERCEL !== "1") return;
   const seedDir = path.join(__dirname, "data");
   fs.mkdirSync(DATA, { recursive: true });
-  for (const file of ["settings.json", "catalog.json", "leaderboards.json", "payments.json"]) {
+  for (const file of [
+    "settings.json",
+    "catalog.json",
+    "leaderboards.json",
+    "payments.json",
+    "role-grants.json",
+  ]) {
     const dest = path.join(DATA, file);
     const src = path.join(seedDir, file);
     if (!fs.existsSync(dest) && fs.existsSync(src)) {
@@ -474,13 +492,122 @@ app.post("/api/store/checkout", async (req, res) => {
       completeUrl: `${base}/doneren/cart?paid=1`,
       cancelUrl: `${base}/doneren/cart`,
     });
-    if (result.ok && result.ident) {
-      req.session.basketIdent = result.ident;
+    if (result.ok) {
+      if (result.ident) req.session.basketIdent = result.ident;
+      const packageIds = (items || [])
+        .map((i) => Number(i.id))
+        .filter((id) => id > 0);
+      req.session.pendingRoleClaim = {
+        packageIds,
+        serverId: String(serverId || ""),
+        discordId: String(req.session.user.id),
+        at: Date.now(),
+        ident: result.ident || null,
+      };
     }
     return res.json(result);
   } catch (err) {
     console.error("Checkout error:", err);
     return res.json({ ok: false, reason: "tebex_error", detail: err.message });
+  }
+});
+
+app.post("/api/store/claim-roles", async (req, res) => {
+  try {
+    const user = req.session?.user;
+    if (!user?.id) {
+      return res.json({ ok: false, reason: "not_logged_in" });
+    }
+
+    const pending = req.session.pendingRoleClaim;
+    const bodyIds = Array.isArray(req.body?.packageIds) ? req.body.packageIds : [];
+    const packageIds = (pending?.packageIds?.length ? pending.packageIds : bodyIds)
+      .map((id) => Number(id))
+      .filter((id) => id > 0);
+
+    if (!packageIds.length) {
+      return res.json({ ok: false, reason: "nothing_to_claim" });
+    }
+
+    // Pending claims expire after 6 hours
+    if (pending?.at && Date.now() - pending.at > 6 * 60 * 60 * 1000) {
+      delete req.session.pendingRoleClaim;
+      return res.json({ ok: false, reason: "claim_expired" });
+    }
+
+    const { roleIds, matchedPackages } = roleIdsForPackages(packageIds);
+    if (!roleIds.length) {
+      return res.json({ ok: false, reason: "no_roles_configured", matchedPackages });
+    }
+
+    const transactionKey = [
+      user.id,
+      pending?.ident || pending?.serverId || "manual",
+      matchedPackages.slice().sort().join("-"),
+    ].join(":");
+
+    if (alreadyClaimed(transactionKey)) {
+      return res.json({ ok: true, alreadyClaimed: true, granted: [], matchedPackages });
+    }
+
+    // Prefer verifying against recent Tebex payments for this username
+    let verified = !getTebexSecret();
+    if (getTebexSecret() && pending?.serverId) {
+      try {
+        const payments = await fetchTebexPayments(40);
+        const list = Array.isArray(payments) ? payments : payments?.data || [];
+        const username = String(pending.serverId).toLowerCase();
+        verified = list.some((p) => {
+          const player = String(p.player?.name || "").toLowerCase();
+          if (player !== username) return false;
+          const paidPackages = (p.packages || []).map((x) => Number(x.id || x));
+          return matchedPackages.some((id) => paidPackages.includes(Number(id)));
+        });
+      } catch (err) {
+        console.error("claim-roles payment verify:", err.message);
+        // Allow claim shortly after checkout redirect if verify fails
+        verified = Boolean(pending?.at && Date.now() - pending.at < 30 * 60 * 1000);
+      }
+    } else if (pending?.at && Date.now() - pending.at < 30 * 60 * 1000) {
+      verified = true;
+    }
+
+    if (!verified) {
+      return res.json({
+        ok: false,
+        reason: "payment_not_found",
+        detail: "Geen passende Tebex-betaling gevonden. Probeer het over een minuut opnieuw.",
+      });
+    }
+
+    const grant = await grantDiscordRoles({
+      userId: user.id,
+      roleIds,
+      reason: `Webshop pakket ${matchedPackages.join(",")}`,
+      guildId: getDiscordGuildIdForRoles(getSettings().guildId),
+    });
+
+    if (grant.ok) {
+      markRolesClaimed({
+        transactionKey,
+        discordId: user.id,
+        packageIds: matchedPackages,
+        granted: grant.granted,
+        serverId: pending?.serverId || null,
+      });
+      delete req.session.pendingRoleClaim;
+    }
+
+    return res.json({
+      ok: grant.ok,
+      granted: grant.granted || [],
+      matchedPackages,
+      reason: grant.reason,
+      errors: grant.errors || [],
+    });
+  } catch (err) {
+    console.error("claim-roles error:", err);
+    return res.json({ ok: false, reason: "claim_error", detail: err.message });
   }
 });
 
@@ -582,6 +709,66 @@ app.post("/api/admin/publish", requireAdmin, (req, res) => {
   s.sitePublic = true;
   writeJson("settings.json", s);
   res.json({ ok: true, settings: s });
+});
+
+app.get("/api/admin/role-grants", requireAdmin, async (_req, res) => {
+  const grants = readRoleGrants();
+  let catalog = readJson("catalog.json", { categories: [] });
+  try {
+    if (getTebexSecret()) {
+      const packages = await fetchTebexPackages();
+      const live = packagesToCatalog(packages);
+      if (live.categories?.length) {
+        catalog = live;
+        writeJson("catalog.json", catalog);
+      }
+    }
+  } catch (err) {
+    console.error("role-grants catalog refresh:", err.message);
+  }
+
+  const packages = [];
+  for (const cat of catalog.categories || []) {
+    for (const pkg of cat.packages || []) {
+      const cfg = grants.packages?.[String(pkg.id)] || {
+        enabled: false,
+        roleIds: [],
+        label: pkg.name,
+      };
+      packages.push({
+        id: pkg.id,
+        name: pkg.name,
+        price: pkg.totalPrice,
+        category: cat.name,
+        enabled: Boolean(cfg.enabled),
+        roleIds: cfg.roleIds || [],
+        label: cfg.label || pkg.name,
+      });
+    }
+  }
+  res.json({
+    ok: true,
+    grants,
+    packages,
+    botConfigured: Boolean(getDiscordBotToken()),
+    guildId: getDiscordGuildIdForRoles(getSettings().guildId) || null,
+    wrapperSync: syncRoleGrantsToTebexwrapper(grants),
+  });
+});
+
+app.put("/api/admin/role-grants", requireAdmin, (req, res) => {
+  const next = writeRoleGrants(req.body.grants || req.body);
+  res.json({ ok: true, grants: next, wrapperSync: syncRoleGrantsToTebexwrapper(next) });
+});
+
+app.put("/api/admin/role-grants/:packageId", requireAdmin, (req, res) => {
+  const next = upsertPackageRoleGrant(req.params.packageId, req.body || {});
+  res.json({
+    ok: true,
+    grants: next,
+    package: next.packages[String(req.params.packageId)] || null,
+    wrapperSync: syncRoleGrantsToTebexwrapper(next),
+  });
 });
 
 app.get("/api/admin/catalog", requireAdmin, (_req, res) => {
