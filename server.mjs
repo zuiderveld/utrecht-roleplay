@@ -33,16 +33,24 @@ import {
   getDiscordGuildIdForRoles,
 } from "./lib/discord-roles.mjs";
 
+import {
+  hasDurableSettingsStore,
+  loadSettingsAsync,
+  saveSettingsAsync,
+  readSettingsFile,
+  seedCatalogFallback,
+} from "./lib/persist.mjs";
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const SEED_DATA = path.join(__dirname, "data");
 const DATA =
   process.env.VERCEL === "1"
     ? path.join("/tmp", "amsterdamrp-data")
-    : path.join(__dirname, "data");
+    : SEED_DATA;
 
 // Seed /tmp data from repo on cold start (Vercel filesystem is ephemeral)
 function ensureDataFiles() {
   if (process.env.VERCEL !== "1") return;
-  const seedDir = path.join(__dirname, "data");
   fs.mkdirSync(DATA, { recursive: true });
   for (const file of [
     "settings.json",
@@ -50,11 +58,23 @@ function ensureDataFiles() {
     "leaderboards.json",
     "payments.json",
     "role-grants.json",
+    "announcement.json",
   ]) {
     const dest = path.join(DATA, file);
-    const src = path.join(seedDir, file);
-    if (!fs.existsSync(dest) && fs.existsSync(src)) {
+    const src = path.join(SEED_DATA, file);
+    if (!fs.existsSync(src)) continue;
+    if (!fs.existsSync(dest)) {
       fs.copyFileSync(src, dest);
+      continue;
+    }
+    // Re-seed empty catalog so admin/shop never stay blank after a bad /tmp write
+    if (file === "catalog.json") {
+      try {
+        const cur = JSON.parse(fs.readFileSync(dest, "utf8"));
+        if (!cur?.categories?.length) fs.copyFileSync(src, dest);
+      } catch {
+        fs.copyFileSync(src, dest);
+      }
     }
   }
 }
@@ -75,7 +95,12 @@ function readJson(file, fallback) {
   try {
     return JSON.parse(fs.readFileSync(p, "utf8"));
   } catch {
-    return structuredClone(fallback);
+    // Fall back to repo seed (important on Vercel when /tmp is empty/corrupt)
+    try {
+      return JSON.parse(fs.readFileSync(path.join(SEED_DATA, file), "utf8"));
+    } catch {
+      return structuredClone(fallback);
+    }
   }
 }
 
@@ -84,21 +109,22 @@ function writeJson(file, data) {
   fs.writeFileSync(path.join(DATA, file), JSON.stringify(data, null, 2), "utf8");
 }
 
-function getSettings() {
-  const s = readJson("settings.json", {
-    maintenance: false,
-    maintenanceMessage: "We zijn even bezig met onderhoud. Kom zo terug!",
-    sitePublic: true,
-    announcement: "",
-    announcementEnabled: false,
-    server: { name: "Amsterdam Roleplay", online: 0, max: 512, onlineMode: "live" },
-    discordMembers: 0,
-    discordInvite: "https://discord.gg/rRSeCBb25A",
-    cfxJoin: "https://cfx.re/join/4zjlgq",
-    cfxCode: "4zjlgq",
-    adminRoleId: ADMIN_ROLE_ID,
-    guildId: DISCORD_GUILD_ID,
-  });
+const defaultSettings = () => ({
+  maintenance: false,
+  maintenanceMessage: "We zijn even bezig met onderhoud. Kom zo terug!",
+  sitePublic: true,
+  announcement: "",
+  announcementEnabled: false,
+  server: { name: "Amsterdam Roleplay", online: 0, max: 512, onlineMode: "live" },
+  discordMembers: 0,
+  discordInvite: "https://discord.gg/rRSeCBb25A",
+  cfxJoin: "https://cfx.re/join/pga9aey",
+  cfxCode: "pga9aey",
+  adminRoleId: ADMIN_ROLE_ID,
+  guildId: DISCORD_GUILD_ID,
+});
+
+function normalizeSettings(s) {
   s.adminRoleId = ADMIN_ROLE_ID;
   if (DISCORD_GUILD_ID) s.guildId = DISCORD_GUILD_ID;
   if (!s.cfxCode && s.cfxJoin) {
@@ -106,6 +132,47 @@ function getSettings() {
     if (m) s.cfxCode = m[1];
   }
   return s;
+}
+
+function getSettings() {
+  return normalizeSettings(readSettingsFile(DATA, SEED_DATA, defaultSettings()));
+}
+
+async function getSettingsAsync() {
+  return normalizeSettings(await loadSettingsAsync(DATA, SEED_DATA, defaultSettings()));
+}
+
+async function persistSettings(next) {
+  const normalized = normalizeSettings(next);
+  return saveSettingsAsync(DATA, normalized);
+}
+
+let catalogCache = { at: 0, data: null };
+
+async function getLiveCatalog() {
+  const redeem = readRedeemPackages();
+  if (catalogCache.data && Date.now() - catalogCache.at < 60_000) {
+    return annotateCatalogWithRedeem(catalogCache.data, redeem);
+  }
+  try {
+    if (getTebexSecret()) {
+      const packages = await fetchTebexPackages();
+      const catalog = packagesToCatalog(packages);
+      if (catalog.categories.length) {
+        catalogCache = { at: Date.now(), data: catalog };
+        try {
+          writeJson("catalog.json", catalog);
+        } catch {
+          /* ignore */
+        }
+        return annotateCatalogWithRedeem(catalog, redeem);
+      }
+    }
+  } catch (err) {
+    console.error("Tebex catalog error:", err.message);
+  }
+  const fallback = seedCatalogFallback(DATA, SEED_DATA);
+  return annotateCatalogWithRedeem(fallback, redeem);
 }
 
 /** Live caches (refreshed in background) */
@@ -406,25 +473,7 @@ app.get("/api/admin/live-status", requireAdmin, async (_req, res) => {
 });
 
 app.get("/api/store/catalog", async (_req, res) => {
-  const redeem = readRedeemPackages();
-  try {
-    if (getTebexSecret()) {
-      const packages = await fetchTebexPackages();
-      let catalog = packagesToCatalog(packages);
-      catalog = annotateCatalogWithRedeem(catalog, redeem);
-      if (catalog.categories.length) {
-        try {
-          writeJson("catalog.json", catalog);
-        } catch {
-          /* ignore */
-        }
-        return res.json(catalog);
-      }
-    }
-  } catch (err) {
-    console.error("Tebex catalog error:", err.message);
-  }
-  res.json(annotateCatalogWithRedeem(readJson("catalog.json", { categories: [] }), redeem));
+  res.json(await getLiveCatalog());
 });
 
 app.get("/api/store/recent-payments", async (_req, res) => {
@@ -443,8 +492,8 @@ app.get("/api/leaderboards", (_req, res) => {
   res.json(readJson("leaderboards.json", { coins: [], spent: [], spentWeekly: [] }));
 });
 
-app.get("/api/site/public-config", (_req, res) => {
-  const s = getSettings();
+app.get("/api/site/public-config", async (_req, res) => {
+  const s = await getSettingsAsync();
   res.json({
     maintenance: s.maintenance,
     maintenanceMessage: s.maintenanceMessage,
@@ -659,16 +708,19 @@ app.get("/api/admin/me", (req, res) => {
   });
 });
 
-app.get("/api/admin/settings", requireAdmin, (_req, res) => {
-  res.json({ ok: true, settings: getSettings() });
+app.get("/api/admin/settings", requireAdmin, async (_req, res) => {
+  res.json({
+    ok: true,
+    settings: await getSettingsAsync(),
+    durableStore: hasDurableSettingsStore(),
+  });
 });
 
-app.put("/api/admin/settings", requireAdmin, (req, res) => {
-  const current = getSettings();
+app.put("/api/admin/settings", requireAdmin, async (req, res) => {
+  const current = await getSettingsAsync();
   const next = { ...current, ...req.body, adminRoleId: ADMIN_ROLE_ID };
   if (req.body.server) next.server = { ...current.server, ...req.body.server };
 
-  // Keep mededeling history when publishing a new one
   if (
     typeof req.body.announcement === "string" &&
     req.body.announcement.trim() &&
@@ -681,12 +733,46 @@ app.put("/api/admin/settings", requireAdmin, (req, res) => {
   }
   if (!Array.isArray(next.announcementHistory)) next.announcementHistory = current.announcementHistory || [];
 
-  writeJson("settings.json", next);
-  res.json({ ok: true, settings: next });
+  if (typeof next.announcement === "string") {
+    next.announcementUpdatedAt = new Date().toISOString();
+  }
+  if (next.announcementEnabled && next.announcement) {
+    next.announcement = String(next.announcement).trim();
+  }
+
+  const saved = await persistSettings(next);
+  // Also keep a dedicated announcement snapshot for cold-start fallbacks
+  try {
+    writeJson("announcement.json", {
+      enabled: Boolean(next.announcementEnabled && next.announcement),
+      text: next.announcementEnabled ? next.announcement || "" : "",
+      updatedAt: next.announcementUpdatedAt || null,
+    });
+  } catch {
+    /* ignore */
+  }
+  res.json({ ok: true, settings: next, durable: saved.durable });
 });
 
-app.get("/api/announcements", (_req, res) => {
-  const s = getSettings();
+app.get("/api/announcements", async (_req, res) => {
+  res.setHeader("Cache-Control", "no-store");
+  let s = await getSettingsAsync();
+  // Fallback snapshot if settings lost announcement on ephemeral disk
+  if (!(s.announcementEnabled && s.announcement)) {
+    try {
+      const snap = readJson("announcement.json", null);
+      if (snap?.enabled && snap?.text) {
+        s = {
+          ...s,
+          announcementEnabled: true,
+          announcement: snap.text,
+          announcementUpdatedAt: snap.updatedAt || null,
+        };
+      }
+    } catch {
+      /* ignore */
+    }
+  }
   res.json({
     enabled: Boolean(s.announcementEnabled && s.announcement),
     text: s.announcementEnabled ? s.announcement || "" : "",
@@ -694,38 +780,33 @@ app.get("/api/announcements", (_req, res) => {
   });
 });
 
-app.post("/api/admin/maintenance", requireAdmin, (req, res) => {
-  const s = getSettings();
+app.post("/api/admin/maintenance", requireAdmin, async (req, res) => {
+  const s = await getSettingsAsync();
   s.maintenance = Boolean(req.body.enabled);
   if (typeof req.body.message === "string") s.maintenanceMessage = req.body.message;
   s.sitePublic = !s.maintenance;
-  writeJson("settings.json", s);
-  res.json({ ok: true, settings: s });
+  const saved = await persistSettings(s);
+  res.json({
+    ok: true,
+    settings: s,
+    durable: saved.durable,
+    note: s.maintenance
+      ? "Onderhoud staat AAN. Admins zien de site nog wel — test in een incognito-venster."
+      : "Site is openbaar.",
+  });
 });
 
-app.post("/api/admin/publish", requireAdmin, (req, res) => {
-  const s = getSettings();
+app.post("/api/admin/publish", requireAdmin, async (_req, res) => {
+  const s = await getSettingsAsync();
   s.maintenance = false;
   s.sitePublic = true;
-  writeJson("settings.json", s);
-  res.json({ ok: true, settings: s });
+  const saved = await persistSettings(s);
+  res.json({ ok: true, settings: s, durable: saved.durable });
 });
 
 app.get("/api/admin/role-grants", requireAdmin, async (_req, res) => {
   const grants = readRoleGrants();
-  let catalog = readJson("catalog.json", { categories: [] });
-  try {
-    if (getTebexSecret()) {
-      const packages = await fetchTebexPackages();
-      const live = packagesToCatalog(packages);
-      if (live.categories?.length) {
-        catalog = live;
-        writeJson("catalog.json", catalog);
-      }
-    }
-  } catch (err) {
-    console.error("role-grants catalog refresh:", err.message);
-  }
+  const catalog = await getLiveCatalog();
 
   const packages = [];
   for (const cat of catalog.categories || []) {
@@ -771,8 +852,13 @@ app.put("/api/admin/role-grants/:packageId", requireAdmin, (req, res) => {
   });
 });
 
-app.get("/api/admin/catalog", requireAdmin, (_req, res) => {
-  res.json({ ok: true, catalog: readJson("catalog.json", { categories: [] }) });
+app.get("/api/admin/catalog", requireAdmin, async (_req, res) => {
+  const catalog = await getLiveCatalog();
+  res.json({
+    ok: true,
+    catalog,
+    source: getTebexSecret() ? "tebex" : "seed",
+  });
 });
 
 app.put("/api/admin/catalog", requireAdmin, (req, res) => {

@@ -21,12 +21,10 @@ const PRESETS = {
 
 let settings = null;
 let catalog = null;
-let catalogSource = "—";
 let rolePackages = [];
 let roleMeta = { botConfigured: false, guildId: null };
 let leaderboards = null;
 let payments = [];
-let durableStore = false;
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -59,20 +57,6 @@ function setTab(name) {
 function fillForms() {
   if (!settings) return;
   $("#maint-msg").value = settings.maintenanceMessage || "";
-  const durableHint = $("#durable-hint");
-  if (durableHint) {
-    durableHint.textContent = durableStore
-      ? "Instellingen worden duurzaam opgeslagen (Upstash)."
-      : "Let op: op Vercel zonder Upstash verdwijnen onderhoud/mededelingen na een cold start. Zet UPSTASH_REDIS_REST_URL + TOKEN.";
-  }
-  const maintHint = $("#maint-hint");
-  if (maintHint && settings.maintenance) {
-    maintHint.innerHTML =
-      "<strong>Onderhoud staat AAN.</strong> Jij ziet de site nog als admin. Test in <strong>incognito</strong> (uitgelogd).";
-  } else if (maintHint) {
-    maintHint.innerHTML =
-      "Admins zien de website altijd. Test onderhoud in een <strong>incognito-venster</strong> (uitgelogd).";
-  }
   $("#announce-on").checked = !!settings.announcementEnabled;
   $("#announce-text").value = settings.announcement || "";
   updateAnnouncePreview();
@@ -102,8 +86,6 @@ function fillForms() {
 
   const pkgCount = (catalog?.categories || []).reduce((n, c) => n + (c.packages?.length || 0), 0);
   $("#ov-packages").textContent = String(pkgCount);
-  const shopSource = $("#shop-source");
-  if (shopSource) shopSource.textContent = `Bron: ${catalogSource} · ${pkgCount} pakketten`;
 }
 
 function renderShop() {
@@ -148,18 +130,21 @@ function renderRoles() {
   if (!list) return;
   list.innerHTML = "";
   if (status) {
-    status.textContent = `Bot: ${roleMeta.botConfigured ? "OK" : "ontbreekt"} · Guild: ${roleMeta.guildId || "onbekend"} · ${rolePackages.length} pakketten`;
+    status.textContent = `Bot: ${roleMeta.botConfigured ? "OK" : "ontbreekt (DISCORD_BOT_TOKEN)"} · Guild: ${roleMeta.guildId || "onbekend"} · ${rolePackages.length} pakketten`;
   }
+
   if (!rolePackages.length) {
-    list.innerHTML = `<div class="card"><p class="muted">Geen pakketten. Zet TEBEX_SECRET in Vercel Variables en klik Vernieuwen.</p></div>`;
+    list.innerHTML = `<div class="card"><p class="muted">Geen pakketten in catalogus. Open eerst de webshop of herlaad zodat Tebex-pakketten geladen zijn.</p></div>`;
     return;
   }
+
   const byCat = new Map();
   for (const pkg of rolePackages) {
     const key = pkg.category || "Overig";
     if (!byCat.has(key)) byCat.set(key, []);
     byCat.get(key).push(pkg);
   }
+
   for (const [catName, pkgs] of byCat) {
     const box = document.createElement("div");
     box.className = "list-card";
@@ -173,7 +158,10 @@ function renderRoles() {
           <div class="meta">Tebex ID ${escapeHtml(String(pkg.id))} · €${Number(pkg.price || 0).toFixed(2)}</div>
         </div>
         <div class="role-controls">
-          <label class="switch"><input type="checkbox" data-role-enabled="${pkg.id}" ${pkg.enabled ? "checked" : ""} /><span>Aan</span></label>
+          <label class="switch">
+            <input type="checkbox" data-role-enabled="${pkg.id}" ${pkg.enabled ? "checked" : ""} />
+            <span>Aan</span>
+          </label>
           <input type="text" data-role-ids="${pkg.id}" value="${escapeHtml((pkg.roleIds || []).join(", "))}" placeholder="Discord role ID(s)" />
           <button class="btn btn-primary btn-sm" data-save-role="${pkg.id}">Opslaan</button>
         </div>`;
@@ -186,7 +174,10 @@ function renderRoles() {
 async function loadRoleGrants() {
   const res = await api("/api/admin/role-grants");
   rolePackages = res.packages || [];
-  roleMeta = { botConfigured: Boolean(res.botConfigured), guildId: res.guildId || null };
+  roleMeta = {
+    botConfigured: Boolean(res.botConfigured),
+    guildId: res.guildId || null,
+  };
   renderRoles();
   return res;
 }
@@ -281,19 +272,7 @@ async function publishAnnouncement(text, enabled = true) {
     announcement: text,
     announcementEnabled: enabled,
   });
-  try {
-    if (enabled && text) {
-      localStorage.setItem(
-        "arp_announcement_v1",
-        JSON.stringify({ enabled: true, text, updatedAt: new Date().toISOString() })
-      );
-    } else {
-      localStorage.removeItem("arp_announcement_v1");
-    }
-  } catch {
-    /* ignore */
-  }
-  toast(enabled ? "Mededeling live — blijft staan na refresh" : "Mededeling uitgezet");
+  toast(enabled ? "Mededeling live op de website" : "Mededeling uitgezet");
 }
 
 async function reloadAll() {
@@ -304,9 +283,7 @@ async function reloadAll() {
     api("/api/admin/payments"),
   ]);
   settings = s.settings;
-  durableStore = Boolean(s.durableStore);
   catalog = c.catalog;
-  catalogSource = c.source || "onbekend";
   leaderboards = l.leaderboards;
   payments = p.payments || [];
   fillForms();
@@ -332,35 +309,19 @@ async function saveSettings(patch) {
 async function handleAction(action) {
   try {
     switch (action) {
-      case "maintenance-on": {
-        const res = await api("/api/admin/maintenance", {
+      case "maintenance-on":
+        await api("/api/admin/maintenance", {
           method: "POST",
           body: JSON.stringify({ enabled: true, message: $("#maint-msg").value }),
         });
         await reloadAll();
-        toast(res.note || "Onderhoudmodus AAN — test in incognito");
+        toast("Onderhoudmodus AAN");
         break;
-      }
-      case "publish": {
+      case "publish":
         await api("/api/admin/publish", { method: "POST", body: "{}" });
         await reloadAll();
         toast("Website openbaar");
         break;
-      }
-      case "shop-refresh":
-        await reloadAll();
-        toast(`Catalogus: ${catalogSource} (${(catalog?.categories || []).reduce((n, c) => n + (c.packages?.length || 0), 0)} pakketten)`);
-        break;
-      case "roles-reload":
-        await loadRoleGrants();
-        toast("Rollen vernieuwd");
-        break;
-      case "roles-sync": {
-        const res = await api("/api/admin/role-grants");
-        const sync = res.wrapperSync;
-        toast(sync?.ok ? `Gesynchroniseerd (${sync.count})` : `Sync: ${sync?.reason || "mislukt"}`);
-        break;
-      }
       case "save-maint-msg":
         await saveSettings({ maintenanceMessage: $("#maint-msg").value });
         break;
@@ -507,6 +468,16 @@ async function handleAction(action) {
         await reloadAll();
         toast("Betaling toegevoegd");
         break;
+      case "roles-reload":
+        await loadRoleGrants();
+        toast("Rollen vernieuwd");
+        break;
+      case "roles-sync": {
+        const res = await api("/api/admin/role-grants");
+        const sync = res.wrapperSync;
+        toast(sync?.ok ? `Gesynchroniseerd (${sync.count} pakketten)` : `Sync mislukt: ${sync?.reason || "?"}`);
+        break;
+      }
       case "reload-all":
         await reloadAll();
         toast("Herladen");
@@ -526,14 +497,19 @@ async function boot() {
     if (!me.oauthConfigured && me.devBypass) {
       status.textContent = "DEV_ADMIN_BYPASS staat aan (geen Discord OAuth).";
     } else if (!me.oauthConfigured) {
-      status.textContent = "Zet DISCORD_CLIENT_ID / SECRET / GUILD_ID in .env";
+      status.textContent = "Zet DISCORD_CLIENT_ID / SECRET / GUILD_ID in Vercel Environment Variables.";
     } else if (!me.guildConfigured) {
-      status.textContent = "Zet DISCORD_GUILD_ID in .env voor role-check.";
+      status.textContent = "Zet DISCORD_GUILD_ID in Vercel Environment Variables.";
     }
 
-    if (!me.loggedIn) return;
+    if (!me.loggedIn) {
+      status.textContent =
+        (status.textContent ? status.textContent + " " : "") +
+        "Log in met Discord om het admin panel te openen.";
+      return;
+    }
     if (!me.isAdmin) {
-      status.textContent = "Ingelogd, maar je hebt niet de admin-role.";
+      status.innerHTML = `Ingelogd als <strong>${me.user?.globalName || me.user?.username || "?"}</strong>, maar je hebt niet de admin-role.<br/>Nodig: role <code>${me.adminRoleId}</code> · guild <code>${me.guildId || "?"}</code> · roles gevonden: ${me.roleCount ?? 0}`;
       return;
     }
 
@@ -598,7 +574,11 @@ document.addEventListener("click", async (e) => {
     const pkg = rolePackages.find((p) => String(p.id) === String(id));
     await api(`/api/admin/role-grants/${id}`, {
       method: "PUT",
-      body: JSON.stringify({ enabled: Boolean(enabled), roleIds, label: pkg?.name || "" }),
+      body: JSON.stringify({
+        enabled: Boolean(enabled),
+        roleIds,
+        label: pkg?.name || "",
+      }),
     });
     await loadRoleGrants();
     return toast(enabled ? "Rol-koppeling opgeslagen" : "Rol-koppeling uitgezet");
