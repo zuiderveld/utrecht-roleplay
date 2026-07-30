@@ -1,0 +1,187 @@
+{
+  "categories": [
+    {
+      "id": 3369019,
+      "name": "Coins",
+      "slug": "coins",
+      "description": "",
+      "packages": [
+        {
+          "id": 7542119,
+          "name": "00 - coins",
+          "slug": "coins",
+          "description": "00 - coins",
+          "image": "https://dunb17ur4ymx4.cloudfront.net/packages/images/2c8d645a8a9e5cbdbdc9265ed23e13bfd71be0cf.png",
+          "remoteImage": "https://dunb17ur4ymx4.cloudfront.net/packages/images/2c8d645a8a9e5cbdbdc9265ed23e13bfd71be0cf.png",
+          "totalPrice": 0,
+          "discount": 0,
+          "currency": "EUR",
+          "type": "single",
+          "tebexwrapperCoins": 0,
+          "deliversVia": "tebexwrapper"
+        },
+        {
+          "id": 7525797,
+          "name": "5 - Coins",
+          "slug": "coins",
+          "description": "5 - Coins",
+          "image": "https://dunb17ur4ymx4.cloudfront.net/packages/images/9d8d87b18232ac157559b2272bee12c21c84cb69.png",
+          "remoteImage": "https://dunb17ur4ymx4.cloudfront.net/packages/images/9d8d87b18232ac157559b2272bee12c21c84cb69.png",
+          "totalPrice": 5,
+          "discount": 0,
+          "currency": "EUR",
+          "type": "single",
+          "tebexwrapperCoins": 5,
+          "deliversVia": "tebexwrapper"
+        },
+        {
+          "id": 7525796,
+          "name": "15 - Coins",
+          "slug": "coins",
+          "description": "15 - Coins",
+          "image": "https://dunb17ur4ymx4.cloudfront.net/packages/images/e2797e687252af8a51e9466b4dfc08fb00f9cf77.png",
+          "remoteImage": "https://dunb17ur4ymx4.cloudfront.net/packages/images/e2797e687252af8a51e9466b4dfc08fb00f9cf77.png",
+          "totalPrice": 15,
+          "discount": 0,
+          "currency": "EUR",
+          "type": "single",
+          "tebexwrapperCoins": 15,
+          "deliversVia": "tebexwrapper"
+        },
+        {
+          "id": 7525795,
+          "name": "20 - Coins",
+          "slug": "coins",
+          "description": "20 - Coins",
+          "image": "https://dunb17ur4ymx4.cloudfront.net/packages/images/85f7cc44980335f99f6bdbd8f8ad4b2df7e3aed1.png",
+          "remoteImage": "https://dunb17ur4ymx4.cloudfront.net/packages/images/85f7cc44980335f99f6bdbd8f8ad4b2df7e3aed1.png",
+          "totalPrice": 20,
+          "discount": 0,
+          "currency": "EUR",
+          "type": "single",
+          "tebexwrapperCoins": 20,
+          "deliversVia": "tebexwrapper"
+        },
+        {
+          "id": 7525792,
+          "name": "35 - Coins",
+          "slug": "coins",
+          "description": "35 - Coins",
+          "image": "https://dunb17ur4ymx4.cloudfront.net/packages/images/897e54171a65e678c9bf19d774e00718cc79e693.png",
+          "remoteImage": "https://dunb17ur4ymx4.cloudfront.net/packages/images/897e54171a65e678c9bf19d774e00718cc79e693.png",
+          "totalPrice": 35,
+          "discount": 0,
+          "currency": "EUR",
+          "type": "single",
+          "tebexwrapperCoins": 35,
+          "deliversVia": "tebexwrapper"
+        },
+        {
+          "id": 7525790,
+          "name": "50 - Coins",
+          "slug": "coins",
+          "description": "50 - Coins",
+          "image": "https://dunb17ur4ymx4.cloudfront.net/packages/images/74e6541fcd6866e40409af6c6e49149e9fe2e089.png",
+          "remoteImage": "https://dunb17ur4ymx4.cloudfront.net/packages/images/74e6541fcd6866e40409af6c6e49149e9fe2e089.png",
+          "totalPrice": 50,
+          "discount": 0,
+          "currency": "EUR",
+          "type": "single",
+          "tebexwrapperCoins": 50,
+          "deliversVia": "tebexwrapper"
+        },
+        {
+          "id": 7525789,
+          "name": "75 - Coins",
+          "slug": "coins",
+          "description": "75 - Coins",
+          "image": "https://dunb17ur4ymx4.cloudfront.net/packages/images/c0db1290c8a68750c8926a40e4591fbec925a418.png",
+          "remoteImage": "https://dunb17ur4ymx4.cloudfront.net/packages/images/c0db1290c8a68750c8926a40e4591fbec925a418.png",
+          "totalPrice": 75,
+          "discount": 0,
+          "currency": "EUR",
+          "type": "single",
+          "tebexwrapperCoins": 75,
+          "deliversVia": "tebexwrapper"
+        },
+        {
+          "id": 7525787,
+          "name": "100 - Coins",
+          "slug": "coins",
+          "description": "100 - Coins",
+          "image": "https://dunb17ur4ymx4.cloudfront.net/packages/images/b2dd852802110301fd7c69cadf40957270502749.png",
+          "remoteImage": "https://dunb17ur4ymx4.cloudfront.net/packages/images/b2dd852802110301fd7c69cadf40957270502749.png",
+          "totalPrice": 100,
+          "discount": 0,
+          "currency": "EUR",
+          "type": "single",
+          "tebexwrapperCoins": 100,
+          "deliversVia": "tebexwrapper"
+        },
+        {
+          "id": 7525786,
+          "name": "150 - Coins",
+          "slug": "coins",
+          "description": "150 - Coins",
+          "image": "https://dunb17ur4ymx4.cloudfront.net/packages/images/7d4c9b779dd84d133cec5ed682e74418d7d6204a.png",
+          "remoteImage": "https://dunb17ur4ymx4.cloudfront.net/packages/images/7d4c9b779dd84d133cec5ed682e74418d7d6204a.png",
+          "totalPrice": 150,
+          "discount": 0,
+          "currency": "EUR",
+          "type": "single",
+          "tebexwrapperCoins": 150,
+          "deliversVia": "tebexwrapper"
+        },
+        {
+          "id": 7525785,
+          "name": "300 - Coins",
+          "slug": "coins",
+          "description": "300 - Coins",
+          "image": "https://dunb17ur4ymx4.cloudfront.net/packages/images/3845449c9c09fc05df4a0bb3a87e059b2aa1d45e.png",
+          "remoteImage": "https://dunb17ur4ymx4.cloudfront.net/packages/images/3845449c9c09fc05df4a0bb3a87e059b2aa1d45e.png",
+          "totalPrice": 300,
+          "discount": 0,
+          "currency": "EUR",
+          "type": "single",
+          "tebexwrapperCoins": 300,
+          "deliversVia": "tebexwrapper"
+        },
+        {
+          "id": 7525784,
+          "name": "600 - Coins",
+          "slug": "coins",
+          "description": "600 - Coins",
+          "image": "https://dunb17ur4ymx4.cloudfront.net/packages/images/e583dc87888a461f9bea631c3531af9521298dd0.png",
+          "remoteImage": "https://dunb17ur4ymx4.cloudfront.net/packages/images/e583dc87888a461f9bea631c3531af9521298dd0.png",
+          "totalPrice": 600,
+          "discount": 0,
+          "currency": "EUR",
+          "type": "single",
+          "tebexwrapperCoins": 600,
+          "deliversVia": "tebexwrapper"
+        }
+      ]
+    },
+    {
+      "id": 3369020,
+      "name": "Unban Aanschaffen",
+      "slug": "unban-aanschaffen",
+      "description": "",
+      "packages": [
+        {
+          "id": 7525779,
+          "name": "Discord Unban",
+          "slug": "unban-aanschaffen",
+          "description": "Discord Unban",
+          "image": "https://dunb17ur4ymx4.cloudfront.net/packages/images/1a1b3a3388a018d772fe81875437b1602e2d9fdb.png",
+          "remoteImage": "https://dunb17ur4ymx4.cloudfront.net/packages/images/1a1b3a3388a018d772fe81875437b1602e2d9fdb.png",
+          "totalPrice": 15,
+          "discount": 0,
+          "currency": "EUR",
+          "type": "single",
+          "deliversVia": "tebex"
+        }
+      ]
+    }
+  ]
+}
